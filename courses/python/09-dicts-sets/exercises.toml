@@ -1,0 +1,81 @@
+[[exercise]]
+id = "word-count"
+kind = "code"
+starter = ""
+solution = '''
+counts = {}
+for w in input().split():
+    counts[w] = counts.get(w, 0) + 1
+for w, n in counts.items():
+    print(w, n)
+'''
+tests = [
+  { input = "the cat and the dog\n", output = "the 2\ncat 1\nand 1\ndog 1\n" },
+  { input = "a a a\n", output = "a 3\n" },
+  { input = "x y z y x y\n", output = "x 2\ny 3\nz 1\n" },
+]
+
+[[exercise]]
+id = "top-word"
+kind = "code"
+starter = ""
+solution = '''
+counts = {}
+for w in input().split():
+    counts[w] = counts.get(w, 0) + 1
+best = min(counts, key=lambda w: (-counts[w], w))
+print(best, counts[best])
+'''
+tests = [
+  { input = "b a c a b\n", output = "a 2\n" },
+  { input = "hello\n", output = "hello 1\n" },
+  { input = "dog cat dog cat dog\n", output = "dog 3\n" },
+  { input = "z y x\n", output = "x 1\n" },
+]
+
+[[exercise]]
+id = "phonebook"
+kind = "code"
+starter = ""
+solution = '''
+book = {}
+for _ in range(int(input())):
+    name, number = input().split()
+    book[name] = number
+for _ in range(int(input())):
+    print(book.get(input(), "not found"))
+'''
+tests = [
+  { input = "2\nTom 123\nAmy 456\n3\nAmy\nBob\nTom\n", output = "456\nnot found\n123\n" },
+  { input = "1\nA 1\n1\nB\n", output = "not found\n" },
+  { input = "2\nA 1\nA 2\n1\nA\n", output = "2\n" },
+]
+
+[[exercise]]
+id = "common"
+kind = "code"
+starter = ""
+solution = '''
+a = set(map(int, input().split()))
+b = set(map(int, input().split()))
+both = sorted(a & b)
+print(" ".join(map(str, both)) if both else "none")
+'''
+tests = [
+  { input = "1 2 3 4 4\n3 4 5 4\n", output = "3 4\n" },
+  { input = "1 2\n3 4\n", output = "none\n" },
+  { input = "5 -1 0\n0 5 7 -1\n", output = "-1 0 5\n" },
+]
+
+[[exercise]]
+id = "dict-predict"
+kind = "output"
+answer = '''
+{'a': 11, 'b': 2}
+2 False 0
+'''
+
+[[exercise]]
+id = "valid-key"
+kind = "choice"
+answer = 1
