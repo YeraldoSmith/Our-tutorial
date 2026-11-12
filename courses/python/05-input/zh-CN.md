@@ -72,7 +72,7 @@ print(f"{a} ÷ {b} = {a / b:.4f}")
 
 有时希望用户在一行里输入好几个数，用空格隔开，比如 `3 4 5`。用 `split()` 切开，再分别转换：
 
-```python
+```python input="3 4 5"
 line = input("输入三角形的三条边（用空格隔开）：")
 parts = line.split()          # "3 4 5" → ['3', '4', '5']
 a = int(parts[0])
@@ -83,7 +83,7 @@ print("周长：", a + b + c)
 
 更简洁的写法是用 `map`，它把一个函数应用到每一个元素上：
 
-```python
+```python input="3 4 5"
 a, b, c = map(int, input().split())
 print(a + b + c)
 ```

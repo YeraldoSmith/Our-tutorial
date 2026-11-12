@@ -97,7 +97,9 @@ def main() -> int:
                 if args.examples and loc in REQUIRED and not args.no_run:
                     for k, block in enumerate(render(body).code_blocks):
                         if block.runnable:
-                            jobs.append((f"{where}/{loc}.md block {k}", block.lang, block.code, None, "exact", []))
+                            m = re.search(r'input="([^"]*)"', block.info)
+                            stdin = m.group(1).encode().decode("unicode_escape") + "\n" if m else None
+                            jobs.append((f"{where}/{loc}.md block {k}", block.lang, block.code, stdin, "exact", []))
             base = ids_by_locale.get("zh-CN", [])
             for loc, ids in ids_by_locale.items():
                 if ids != base:
@@ -121,8 +123,8 @@ def main() -> int:
         for pkg in requires:
             if not chains.has_module(pkg):
                 return name, None, f"skipped (python package {pkg} missing)"
-        if tests is None:  # example block: must run without crashing
-            stdin = "3\n4\n5\n" * 4
+        if tests is None or isinstance(tests, str):  # example block: must run without crashing
+            stdin = tests if isinstance(tests, str) else "3\n4\n5\n" * 4
             report = runners.run_tests(chains, lang, code, [{"input": stdin, "output": ""}], "contains", timeout=20)
             r = report.results[0] if report.results else None
             if report.compile_failed:

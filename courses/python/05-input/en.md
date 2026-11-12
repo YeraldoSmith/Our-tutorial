@@ -72,7 +72,7 @@ Run it and enter `7` and `2`. We use `float` instead of `int` so decimals work t
 
 Sometimes the user types several numbers on one line separated by spaces, like `3 4 5`. Split the line and convert each part:
 
-```python
+```python input="3 4 5"
 line = input("Three sides of a triangle (separated by spaces): ")
 parts = line.split()          # "3 4 5" → ['3', '4', '5']
 a = int(parts[0])
@@ -83,7 +83,7 @@ print("Perimeter:", a + b + c)
 
 A shorter way uses `map`, which applies a function to every element:
 
-```python
+```python input="3 4 5"
 a, b, c = map(int, input().split())
 print(a + b + c)
 ```
