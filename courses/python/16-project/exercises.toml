@@ -1,0 +1,93 @@
+[[exercise]]
+id = "parse-add"
+kind = "code"
+starter = '''
+line = input()
+parts = line.split()
+'''
+solution = '''
+line = input()
+parts = line.split()
+if len(parts) < 3 or parts[0] != "add":
+    print("invalid command")
+else:
+    try:
+        amount = float(parts[1])
+    except ValueError:
+        amount = 0
+    if amount <= 0:
+        print("invalid amount")
+    else:
+        note = " ".join(parts[3:]) or "-"
+        print(f"{amount:.2f} | {parts[2]} | {note}")
+'''
+tests = [
+  { input = "add 35 food lunch and coffee\n", output = "35.00 | food | lunch and coffee\n" },
+  { input = "add 35 餐饮 午饭 和 咖啡\n", output = "35.00 | 餐饮 | 午饭 和 咖啡\n" },
+  { input = "add 12.5 transport\n", output = "12.50 | transport | -\n" },
+  { input = "add abc food\n", output = "invalid amount\n" },
+  { input = "add -1 food\n", output = "invalid amount\n" },
+  { input = "list\n", output = "invalid command\n" },
+  { input = "add 7\n", output = "invalid command\n" },
+]
+
+[[exercise]]
+id = "category-report"
+kind = "code"
+starter = '''
+n = int(input())
+'''
+solution = '''
+n = int(input())
+totals = {}
+for _ in range(n):
+    category, amount = input().split()
+    totals[category] = totals.get(category, 0) + float(amount)
+for category, amount in sorted(totals.items(), key=lambda kv: (-kv[1], kv[0])):
+    print(f"{category} {amount:.2f}")
+print(f"total {sum(totals.values()):.2f}")
+'''
+tests = [
+  { input = "3\nfood 35\nbus 12.5\nfood 20\n", output = "food 55.00\nbus 12.50\ntotal 67.50\n" },
+  { input = "3\nb 5\na 5\nc 1.25\n", output = "a 5.00\nb 5.00\nc 1.25\ntotal 11.25\n" },
+  { input = "2\nx 0.1\nx 0.2\n", output = "x 0.30\ntotal 0.30\n" },
+]
+
+[[exercise]]
+id = "text-bars"
+kind = "code"
+starter = '''
+rows = []
+while True:
+    line = input()
+    if line == "end":
+        break
+'''
+solution = '''
+rows = []
+while True:
+    line = input()
+    if line == "end":
+        break
+    label, value = line.split()
+    rows.append((label, int(value)))
+width = max(len(label) for label, _ in rows)
+biggest = max(value for _, value in rows)
+for label, value in rows:
+    print(f"{label:<{width}} {'#' * round(value / biggest * 10)} {value}")
+'''
+tests = [
+  { input = "food 40\nbus 20\nfun 8\nend\n", output = "food ########## 40\nbus  ##### 20\nfun  ## 8\n" },
+  { input = "a 3\nend\n", output = "a ########## 3\n" },
+  { input = "rent 100\ntea 30\nx 70\nend\n", output = "rent ########## 100\ntea  ### 30\nx    ####### 70\n" },
+]
+
+[[exercise]]
+id = "why-layers"
+kind = "choice"
+answer = 1
+
+[[exercise]]
+id = "why-file"
+kind = "choice"
+answer = 0
