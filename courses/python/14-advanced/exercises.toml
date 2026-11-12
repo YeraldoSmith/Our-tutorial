@@ -1,0 +1,235 @@
+[[exercise]]
+id = "evens-gen"
+kind = "code"
+solution = '''
+def evens(n):
+    for i in range(0, n + 1, 2):
+        yield i
+
+
+n = int(input())
+print(" ".join(str(x) for x in evens(n)))
+'''
+tests = [
+  { input = "9\n", output = "0 2 4 6 8\n" },
+  { input = "0\n", output = "0\n" },
+  { input = "10\n", output = "0 2 4 6 8 10\n" },
+]
+[exercise.starter]
+zh-CN = '''
+def evens(n):
+    # 在这里写代码
+    yield from ()
+
+
+n = int(input())
+print(" ".join(str(x) for x in evens(n)))
+'''
+zh-TW = '''
+def evens(n):
+    # 在這裡寫程式碼
+    yield from ()
+
+
+n = int(input())
+print(" ".join(str(x) for x in evens(n)))
+'''
+en = '''
+def evens(n):
+    # write your code here
+    yield from ()
+
+
+n = int(input())
+print(" ".join(str(x) for x in evens(n)))
+'''
+ru = '''
+def evens(n):
+    # пишите код здесь
+    yield from ()
+
+
+n = int(input())
+print(" ".join(str(x) for x in evens(n)))
+'''
+
+[[exercise]]
+id = "star-average"
+kind = "code"
+solution = '''
+def stats(*nums):
+    return min(nums), max(nums), sum(nums) / len(nums)
+
+
+nums = list(map(int, input().split()))
+lo, hi, avg = stats(*nums)
+print(lo, hi, f"{avg:.2f}")
+'''
+tests = [
+  { input = "4 8 15 16 23 42\n", output = "4 42 18.00\n" },
+  { input = "5\n", output = "5 5 5.00\n" },
+  { input = "-3 3 1\n", output = "-3 3 0.33\n" },
+]
+[exercise.starter]
+zh-CN = '''
+def stats(*nums):
+    # 在这里写代码
+    pass
+
+
+nums = list(map(int, input().split()))
+lo, hi, avg = stats(*nums)
+print(lo, hi, f"{avg:.2f}")
+'''
+zh-TW = '''
+def stats(*nums):
+    # 在這裡寫程式碼
+    pass
+
+
+nums = list(map(int, input().split()))
+lo, hi, avg = stats(*nums)
+print(lo, hi, f"{avg:.2f}")
+'''
+en = '''
+def stats(*nums):
+    # write your code here
+    pass
+
+
+nums = list(map(int, input().split()))
+lo, hi, avg = stats(*nums)
+print(lo, hi, f"{avg:.2f}")
+'''
+ru = '''
+def stats(*nums):
+    # пишите код здесь
+    pass
+
+
+nums = list(map(int, input().split()))
+lo, hi, avg = stats(*nums)
+print(lo, hi, f"{avg:.2f}")
+'''
+
+[[exercise]]
+id = "match-commands"
+kind = "code"
+solution = '''
+while True:
+    match input().split():
+        case ["quit"]:
+            break
+        case ["add", a, b]:
+            print(int(a) + int(b))
+        case ["mul", a, b]:
+            print(int(a) * int(b))
+        case ["neg", a]:
+            print(-int(a))
+        case _:
+            print("unknown")
+'''
+tests = [
+  { input = "add 2 3\nneg 7\npow 2 3\nmul 4 5\nquit\n", output = "5\n-7\nunknown\n20\n" },
+  { input = "quit\n", output = "" },
+  { input = "add 1\nneg -4\nmul -2 8\nquit\n", output = "unknown\n4\n-16\n" },
+]
+[exercise.starter]
+zh-CN = '''
+while True:
+    # 在这里写代码
+    break
+'''
+zh-TW = '''
+while True:
+    # 在這裡寫程式碼
+    break
+'''
+en = '''
+while True:
+    # write your code here
+    break
+'''
+ru = '''
+while True:
+    # пишите код здесь
+    break
+'''
+
+[[exercise]]
+id = "big-fib"
+kind = "code"
+solution = '''
+from functools import cache
+
+
+@cache
+def fib(n):
+    if n < 2:
+        return n
+    return fib(n - 1) + fib(n - 2)
+
+
+n = int(input())
+print(fib(n))
+'''
+tests = [
+  { input = "90\n", output = "2880067194370816120\n" },
+  { input = "0\n", output = "0\n" },
+  { input = "1\n", output = "1\n" },
+  { input = "10\n", output = "55\n" },
+  { input = "300\n", output = "222232244629420445529739893461909967206666939096499764990979600\n" },
+]
+[exercise.starter]
+zh-CN = '''
+from functools import cache
+
+
+# 在这里写代码
+
+
+n = int(input())
+'''
+zh-TW = '''
+from functools import cache
+
+
+# 在這裡寫程式碼
+
+
+n = int(input())
+'''
+en = '''
+from functools import cache
+
+
+# write your code here
+
+
+n = int(input())
+'''
+ru = '''
+from functools import cache
+
+
+# пишите код здесь
+
+
+n = int(input())
+'''
+
+[[exercise]]
+id = "gen-predict"
+kind = "output"
+answer = '''
+created
+start
+1
+middle
+2
+'''
+
+[[exercise]]
+id = "decorator-meaning"
+kind = "choice"
+answer = 1
