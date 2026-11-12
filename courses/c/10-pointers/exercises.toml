@@ -1,0 +1,273 @@
+[[exercise]]
+id = "swap-ptr"
+kind = "code"
+solution = '''
+#include <stdio.h>
+
+void swap(int *a, int *b) {
+    int t = *a;
+    *a = *b;
+    *b = t;
+}
+
+int main(void) {
+    int x = 0, y = 0;
+    scanf("%d %d", &x, &y);
+    swap(&x, &y);
+    printf("%d %d\n", x, y);
+    return 0;
+}
+'''
+tests = [
+  { input = "3 8\n", output = "8 3\n" },
+  { input = "-5 5\n", output = "5 -5\n" },
+  { input = "7 7\n", output = "7 7\n" },
+  { input = "0 100\n", output = "100 0\n" },
+]
+[exercise.starter]
+zh-CN = '''
+#include <stdio.h>
+
+void swap(int *a, int *b) {
+    // 在这里写代码
+}
+
+int main(void) {
+    int x = 0, y = 0;
+    scanf("%d %d", &x, &y);
+    swap(&x, &y);
+    printf("%d %d\n", x, y);
+    return 0;
+}
+'''
+zh-TW = '''
+#include <stdio.h>
+
+void swap(int *a, int *b) {
+    // 在這裡寫程式碼
+}
+
+int main(void) {
+    int x = 0, y = 0;
+    scanf("%d %d", &x, &y);
+    swap(&x, &y);
+    printf("%d %d\n", x, y);
+    return 0;
+}
+'''
+en = '''
+#include <stdio.h>
+
+void swap(int *a, int *b) {
+    // write your code here
+}
+
+int main(void) {
+    int x = 0, y = 0;
+    scanf("%d %d", &x, &y);
+    swap(&x, &y);
+    printf("%d %d\n", x, y);
+    return 0;
+}
+'''
+ru = '''
+#include <stdio.h>
+
+void swap(int *a, int *b) {
+    // пишите код здесь
+}
+
+int main(void) {
+    int x = 0, y = 0;
+    scanf("%d %d", &x, &y);
+    swap(&x, &y);
+    printf("%d %d\n", x, y);
+    return 0;
+}
+'''
+
+[[exercise]]
+id = "split-time"
+kind = "code"
+solution = '''
+#include <stdio.h>
+
+void split_time(int total, int *h, int *m, int *s) {
+    *h = total / 3600;
+    *m = total % 3600 / 60;
+    *s = total % 60;
+}
+
+int main(void) {
+    int total = 0, h = 0, m = 0, s = 0;
+    scanf("%d", &total);
+    split_time(total, &h, &m, &s);
+    printf("%d:%02d:%02d\n", h, m, s);
+    return 0;
+}
+'''
+tests = [
+  { input = "3661\n", output = "1:01:01\n" },
+  { input = "59\n", output = "0:00:59\n" },
+  { input = "86399\n", output = "23:59:59\n" },
+  { input = "0\n", output = "0:00:00\n" },
+  { input = "100000\n", output = "27:46:40\n" },
+  { input = "7200\n", output = "2:00:00\n" },
+]
+starter = '''
+#include <stdio.h>
+
+int main(void) {
+
+    return 0;
+}
+'''
+
+[[exercise]]
+id = "qsort-desc"
+kind = "code"
+solution = '''
+#include <stdio.h>
+#include <stdlib.h>
+
+#define MAX_N 1000
+
+int compare_desc(const void *a, const void *b) {
+    int x = *(const int *)a;
+    int y = *(const int *)b;
+    return (x < y) - (x > y);
+}
+
+int main(void) {
+    int a[MAX_N];
+    int n = 0;
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+    }
+    qsort(a, n, sizeof a[0], compare_desc);
+    for (int i = 0; i < n; i++) {
+        printf(i == 0 ? "%d" : " %d", a[i]);
+    }
+    printf("\n");
+    return 0;
+}
+'''
+tests = [
+  { input = "5\n3 -1 4 1 5\n", output = "5 4 3 1 -1\n" },
+  { input = "1\n1\n", output = "1\n" },
+  { input = "3\n2 2 1\n", output = "2 2 1\n" },
+  { input = "3\n2147483647 -2147483648 0\n", output = "2147483647 0 -2147483648\n" },
+  { input = "30\n170 -934 -122 -12 183 -970 -578 -53 665 6 686 -432 338 660 -672 -930 66 3 -329 -845 -489 950 951 526 -261 -909 -140 761 -716 235\n", output = "951 950 761 686 665 660 526 338 235 183 170 66 6 3 -12 -53 -122 -140 -261 -329 -432 -489 -578 -672 -716 -845 -909 -930 -934 -970\n" },
+]
+starter = '''
+#include <stdio.h>
+
+int main(void) {
+
+    return 0;
+}
+'''
+
+[[exercise]]
+id = "count-substr"
+kind = "code"
+solution = '''
+#include <stdio.h>
+#include <string.h>
+
+int main(void) {
+    char text[1001], word[101];
+    if (fgets(text, sizeof text, stdin) == NULL || fgets(word, sizeof word, stdin) == NULL) {
+        return 1;
+    }
+    text[strcspn(text, "\n")] = '\0';
+    word[strcspn(word, "\n")] = '\0';
+    int count = 0;
+    if (word[0] != '\0') {
+        char *p = strstr(text, word);
+        while (p != NULL) {
+            count++;
+            p = strstr(p + 1, word);
+        }
+    }
+    printf("%d\n", count);
+    return 0;
+}
+'''
+tests = [
+  { input = "banana\nana\n", output = "2\n" },
+  { input = "the cat sat on the mat\nat\n", output = "3\n" },
+  { input = "aaaa\naa\n", output = "3\n" },
+  { input = "Hello hello\nhello\n", output = "1\n" },
+  { input = "abc\nxyz\n", output = "0\n" },
+  { input = "to be or not to be\nbe\n", output = "2\n" },
+]
+starter = '''
+#include <stdio.h>
+
+int main(void) {
+
+    return 0;
+}
+'''
+
+[[exercise]]
+id = "reverse-ptr"
+kind = "code"
+solution = '''
+#include <stdio.h>
+#include <string.h>
+
+void reverse(char *s) {
+    if (*s == '\0') {
+        return;
+    }
+    char *left = s;
+    char *right = s + strlen(s) - 1;
+    while (left < right) {
+        char t = *left;
+        *left = *right;
+        *right = t;
+        left++;
+        right--;
+    }
+}
+
+int main(void) {
+    char word[101];
+    scanf("%100s", word);
+    reverse(word);
+    printf("%s\n", word);
+    return 0;
+}
+'''
+tests = [
+  { input = "pointer\n", output = "retniop\n" },
+  { input = "a\n", output = "a\n" },
+  { input = "ab\n", output = "ba\n" },
+  { input = "racecar\n", output = "racecar\n" },
+  { input = "Hello123\n", output = "321olleH\n" },
+]
+starter = '''
+#include <stdio.h>
+
+int main(void) {
+
+    return 0;
+}
+'''
+
+[[exercise]]
+id = "ptr-predict"
+kind = "output"
+answer = '''
+1 20 13 4
+2
+10
+'''
+
+[[exercise]]
+id = "ptr-value"
+kind = "choice"
+answer = 1
