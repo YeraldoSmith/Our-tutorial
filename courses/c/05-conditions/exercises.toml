@@ -1,0 +1,162 @@
+[[exercise]]
+id = "sign"
+kind = "code"
+starter = '''
+#include <stdio.h>
+
+int main(void) {
+
+    return 0;
+}
+'''
+solution = '''
+#include <stdio.h>
+
+int main(void) {
+    int n = 0;
+    scanf("%d", &n);
+    if (n > 0) {
+        printf("positive\n");
+    } else if (n < 0) {
+        printf("negative\n");
+    } else {
+        printf("zero\n");
+    }
+    return 0;
+}
+'''
+tests = [
+  { input = "-5\n", output = "negative\n" },
+  { input = "7\n", output = "positive\n" },
+  { input = "0\n", output = "zero\n" },
+]
+
+[[exercise]]
+id = "grade"
+kind = "code"
+starter = '''
+#include <stdio.h>
+
+int main(void) {
+
+    return 0;
+}
+'''
+solution = '''
+#include <stdio.h>
+
+int main(void) {
+    int s = 0;
+    scanf("%d", &s);
+    if (s >= 90) {
+        printf("A\n");
+    } else if (s >= 80) {
+        printf("B\n");
+    } else if (s >= 70) {
+        printf("C\n");
+    } else if (s >= 60) {
+        printf("D\n");
+    } else {
+        printf("F\n");
+    }
+    return 0;
+}
+'''
+tests = [
+  { input = "85\n", output = "B\n" },
+  { input = "90\n", output = "A\n" },
+  { input = "100\n", output = "A\n" },
+  { input = "70\n", output = "C\n" },
+  { input = "69\n", output = "D\n" },
+  { input = "0\n", output = "F\n" },
+]
+
+[[exercise]]
+id = "leap"
+kind = "code"
+starter = '''
+#include <stdio.h>
+
+int main(void) {
+
+    return 0;
+}
+'''
+solution = '''
+#include <stdio.h>
+
+int main(void) {
+    int y = 0;
+    scanf("%d", &y);
+    if ((y % 4 == 0 && y % 100 != 0) || y % 400 == 0) {
+        printf("leap\n");
+    } else {
+        printf("common\n");
+    }
+    return 0;
+}
+'''
+tests = [
+  { input = "1900\n", output = "common\n" },
+  { input = "2000\n", output = "leap\n" },
+  { input = "2024\n", output = "leap\n" },
+  { input = "2023\n", output = "common\n" },
+]
+
+[[exercise]]
+id = "calc"
+kind = "code"
+starter = '''
+#include <stdio.h>
+
+int main(void) {
+
+    return 0;
+}
+'''
+solution = '''
+#include <stdio.h>
+
+int main(void) {
+    int a = 0, b = 0;
+    char op = 0;
+    scanf("%d %c %d", &a, &op, &b);
+    switch (op) {
+        case '+': printf("%d\n", a + b); break;
+        case '-': printf("%d\n", a - b); break;
+        case '*': printf("%d\n", a * b); break;
+        case '/':
+            if (b != 0) {
+                printf("%d\n", a / b);
+            } else {
+                printf("error\n");
+            }
+            break;
+        default: printf("error\n"); break;
+    }
+    return 0;
+}
+'''
+tests = [
+  { input = "6 * 7\n", output = "42\n" },
+  { input = "10 / 3\n", output = "3\n" },
+  { input = "5 - 9\n", output = "-4\n" },
+  { input = "1 / 0\n", output = "error\n" },
+  { input = "2 ^ 3\n", output = "error\n" },
+  { input = "100 + 23\n", output = "123\n" },
+]
+
+[[exercise]]
+id = "braces-predict"
+kind = "output"
+answer = '''
+B
+C
+E
+F
+'''
+
+[[exercise]]
+id = "semicolon"
+kind = "choice"
+answer = 1
