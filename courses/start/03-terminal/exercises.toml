@@ -1,0 +1,25 @@
+[[exercise]]
+id = "cd-up"
+kind = "choice"
+answer = 1
+
+[[exercise]]
+id = "stop"
+kind = "choice"
+answer = 1
+
+[[exercise]]
+id = "not-found"
+kind = "choice"
+answer = 1
+
+[[exercise]]
+id = "commands"
+kind = "code"
+starter = ""
+solution = '''
+print("mkdir project")
+print("cd project")
+print("pwd")
+'''
+tests = [{ input = "", output = "mkdir project\ncd project\npwd\n" }]

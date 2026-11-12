@@ -14,6 +14,7 @@ from .theme import COLORS, mono_font
 
 
 def md_plain(text: str) -> str:
+    text = re.sub(r"<[^>]+>", "", text)
     text = re.sub(r"`([^`]+)`", r"\1", text)
     text = re.sub(r"\*\*(.+?)\*\*", r"\1", text)
     return re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", text)

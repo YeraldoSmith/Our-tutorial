@@ -1,0 +1,27 @@
+[[exercise]]
+id = "extension"
+kind = "choice"
+answer = 2
+
+[[exercise]]
+id = "half-width"
+kind = "choice"
+answer = 2
+
+[[exercise]]
+id = "symbols"
+kind = "code"
+starter = ""
+solution = '''
+print("(a + b) * [c - d] / {e}")
+'''
+tests = [{ input = "", output = "(a + b) * [c - d] / {e}\n" }]
+
+[[exercise]]
+id = "backslash"
+kind = "code"
+starter = ""
+solution = '''
+print("C:\\code\\hello.py")
+'''
+tests = [{ input = "", output = "C:\\code\\hello.py\n" }]

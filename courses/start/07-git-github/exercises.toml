@@ -1,0 +1,25 @@
+[[exercise]]
+id = "commit-meaning"
+kind = "choice"
+answer = 1
+
+[[exercise]]
+id = "clone"
+kind = "choice"
+answer = 1
+
+[[exercise]]
+id = "secret"
+kind = "choice"
+answer = 2
+
+[[exercise]]
+id = "workflow"
+kind = "code"
+starter = ""
+solution = '''
+print("git add .")
+print('git commit -m "update"')
+print("git push")
+'''
+tests = [{ input = "", output = "git add .\ngit commit -m \"update\"\ngit push\n" }]

@@ -1,0 +1,25 @@
+[[exercise]]
+id = "verify"
+kind = "choice"
+answer = 1
+
+[[exercise]]
+id = "path-checkbox"
+kind = "choice"
+answer = 1
+
+[[exercise]]
+id = "package-manager"
+kind = "choice"
+answer = 2
+
+[[exercise]]
+id = "checklist"
+kind = "code"
+starter = ""
+solution = '''
+print("python3 --version")
+print("gcc --version")
+print("java -version")
+'''
+tests = [{ input = "", output = "python3 --version\ngcc --version\njava -version\n" }]

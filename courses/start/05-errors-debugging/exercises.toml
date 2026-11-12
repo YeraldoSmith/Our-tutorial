@@ -1,0 +1,89 @@
+[[exercise]]
+id = "read-traceback"
+kind = "choice"
+answer = 1
+
+[[exercise]]
+id = "first-error"
+kind = "choice"
+answer = 1
+
+[[exercise]]
+id = "fix-receipt"
+kind = "code"
+[exercise.starter]
+zh-CN = '''
+print("购物小票")
+apple = 3
+banana = 5
+print("苹果：" apple, "个")
+print("香蕉：", Banana, "个")
+print("合计：", apple + banana, "个"
+'''
+zh-TW = '''
+print("購物小票")
+apple = 3
+banana = 5
+print("蘋果：" apple, "個")
+print("香蕉：", Banana, "個")
+print("合計：", apple + banana, "個"
+'''
+en = '''
+print("Receipt")
+apple = 3
+banana = 5
+print("Apples:" apple)
+print("Bananas:", Banana)
+print("Total:", apple + banana
+'''
+ru = '''
+print("Чек")
+apple = 3
+banana = 5
+print("Яблоки:" apple)
+print("Бананы:", Banana)
+print("Итого:", apple + banana
+'''
+[exercise.solution]
+zh-CN = '''
+print("购物小票")
+apple = 3
+banana = 5
+print("苹果：", apple, "个")
+print("香蕉：", banana, "个")
+print("合计：", apple + banana, "个")
+'''
+zh-TW = '''
+print("購物小票")
+apple = 3
+banana = 5
+print("蘋果：", apple, "個")
+print("香蕉：", banana, "個")
+print("合計：", apple + banana, "個")
+'''
+en = '''
+print("Receipt")
+apple = 3
+banana = 5
+print("Apples:", apple)
+print("Bananas:", banana)
+print("Total:", apple + banana)
+'''
+ru = '''
+print("Чек")
+apple = 3
+banana = 5
+print("Яблоки:", apple)
+print("Бананы:", banana)
+print("Итого:", apple + banana)
+'''
+[exercise.tests]
+zh-CN = [{ input = "", output = "购物小票\n苹果： 3 个\n香蕉： 5 个\n合计： 8 个\n" }]
+zh-TW = [{ input = "", output = "購物小票\n蘋果： 3 個\n香蕉： 5 個\n合計： 8 個\n" }]
+en = [{ input = "", output = "Receipt\nApples: 3\nBananas: 5\nTotal: 8\n" }]
+ru = [{ input = "", output = "Чек\nЯблоки: 3\nБананы: 5\nИтого: 8\n" }]
+
+[[exercise]]
+id = "word-meaning"
+kind = "choice"
+answer = 1

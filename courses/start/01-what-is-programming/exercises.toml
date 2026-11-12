@@ -1,0 +1,27 @@
+[[exercise]]
+id = "what-is-program"
+kind = "choice"
+answer = 1
+
+[[exercise]]
+id = "compile-or-interpret"
+kind = "choice"
+answer = 1
+
+[[exercise]]
+id = "first-code"
+kind = "code"
+starter = ""
+solution = '''
+print("Hello!")
+print("1 + 2 =", 1 + 2)
+'''
+tests = [{ input = "", output = "Hello!\n1 + 2 = 3\n" }]
+
+[[exercise]]
+id = "predict-calc"
+kind = "output"
+answer = '''
+6
+2 * 3
+'''

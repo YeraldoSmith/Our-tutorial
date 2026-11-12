@@ -1,0 +1,20 @@
+[[exercise]]
+id = "best-method"
+kind = "choice"
+answer = 2
+
+[[exercise]]
+id = "stuck"
+kind = "choice"
+answer = 2
+
+[[exercise]]
+id = "plan"
+kind = "code"
+starter = ""
+solution = '''
+print("Goal: learn Python")
+print("Time: 1 hour every day")
+print("Start: today!")
+'''
+tests = [{ input = "", output = "Goal: learn Python\nTime: 1 hour every day\nStart: today!\n" }]

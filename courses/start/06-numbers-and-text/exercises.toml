@@ -1,0 +1,38 @@
+[[exercise]]
+id = "binary-of-10"
+kind = "choice"
+answer = 0
+
+[[exercise]]
+id = "convert"
+kind = "code"
+starter = ""
+solution = '''
+print(bin(200))
+print(hex(200))
+print(int("11111111", 2))
+'''
+tests = [{ input = "", output = "0b11001000\n0xc8\n255\n" }]
+
+[[exercise]]
+id = "float-predict"
+kind = "output"
+answer = '''
+0.3
+True
+'''
+
+[[exercise]]
+id = "utf8-bytes"
+kind = "choice"
+answer = 2
+
+[[exercise]]
+id = "char-codes"
+kind = "code"
+starter = ""
+solution = '''
+print(ord("a"))
+print(chr(90))
+'''
+tests = [{ input = "", output = "97\nZ\n" }]
