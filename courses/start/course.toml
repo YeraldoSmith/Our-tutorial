@@ -1,0 +1,16 @@
+id = "start"
+language = "python"
+icon = "🚀"
+level = "zero"
+
+[title]
+zh-CN = "编程起步"
+zh-TW = "程式設計起步"
+en = "Start here"
+ru = "Первые шаги"
+
+[summary]
+zh-CN = "从来没写过代码？从这里开始：什么是编程、电脑基础、终端、安装工具、读懂错误信息、Git 与学习方法。"
+zh-TW = "從來沒寫過程式碼？從這裡開始：什麼是程式設計、電腦基礎、終端、安裝工具、讀懂錯誤資訊、Git 與學習方法。"
+en = "Never written code? Start here: what programming is, computer basics, the terminal, installing tools, reading error messages, Git, and how to learn."
+ru = "Никогда не писали код? Начните здесь: что такое программирование, основы работы с компьютером, терминал, установка инструментов, сообщения об ошибках, Git и как учиться."

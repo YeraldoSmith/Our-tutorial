@@ -1,0 +1,16 @@
+id = "javascript"
+language = "javascript"
+icon = "🟨"
+level = "beginner"
+
+[title]
+zh-CN = "JavaScript 与 TypeScript"
+zh-TW = "JavaScript 與 TypeScript"
+en = "JavaScript & TypeScript"
+ru = "JavaScript и TypeScript"
+
+[summary]
+zh-CN = "网页与全栈的语言：变量、函数、数组与对象、类、异步 async/await、模块与 npm，再到 TypeScript 类型系统和浏览器 DOM。"
+zh-TW = "網頁與全堆疊的語言：變數、函式、陣列與物件、類、非同步 async/await、模組與 npm，再到 TypeScript 型別系統和瀏覽器 DOM。"
+en = "The language of the web: variables, functions, arrays and objects, classes, async/await, modules and npm, then TypeScript's type system and the browser DOM."
+ru = "Язык веба: переменные, функции, массивы и объекты, классы, async/await, модули и npm, а затем система типов TypeScript и DOM браузера."

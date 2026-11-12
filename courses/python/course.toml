@@ -1,0 +1,16 @@
+id = "python"
+language = "python"
+icon = "🐍"
+level = "beginner"
+
+[title]
+zh-CN = "Python"
+zh-TW = "Python"
+en = "Python"
+ru = "Python"
+
+[summary]
+zh-CN = "最适合入门的语言。从 print 到面向对象、文件、异常、现代工具链（uv、ruff、pytest）和完整项目。"
+zh-TW = "最適合入門的語言。從 print 到物件導向、檔案、異常、現代工具鏈（uv、ruff、pytest）和完整專案。"
+en = "The friendliest first language. From print to classes, files, exceptions, modern tooling (uv, ruff, pytest) and complete projects."
+ru = "Самый дружелюбный первый язык. От print до классов, файлов, исключений, современных инструментов (uv, ruff, pytest) и готовых проектов."

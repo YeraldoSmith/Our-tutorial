@@ -1,0 +1,16 @@
+id = "rust"
+language = "rust"
+icon = "🦀"
+level = "beginner"
+
+[title]
+zh-CN = "Rust"
+zh-TW = "Rust"
+en = "Rust"
+ru = "Rust"
+
+[summary]
+zh-CN = "安全又快的系统语言（2024 版）：所有权与借用、结构体与枚举、错误处理、trait 与泛型、生命周期、迭代器、Cargo 与并发。"
+zh-TW = "安全又快的系統語言（2024 版）：所有權與借用、結構體與列舉、錯誤處理、trait 與泛型、生命週期、迭代器、Cargo 與併發。"
+en = "Safe and fast systems programming (2024 edition): ownership and borrowing, structs and enums, error handling, traits and generics, lifetimes, iterators, Cargo and concurrency."
+ru = "Безопасное и быстрое системное программирование (редакция 2024): владение и заимствование, структуры и перечисления, ошибки, трейты и обобщения, времена жизни, итераторы, Cargo и параллелизм."

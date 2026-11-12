@@ -1,0 +1,16 @@
+id = "c"
+language = "c"
+icon = "🔧"
+level = "beginner"
+
+[title]
+zh-CN = "C 语言"
+zh-TW = "C 語言"
+en = "C"
+ru = "Язык C"
+
+[summary]
+zh-CN = "离硬件最近的高级语言。变量、控制流、函数、数组、指针、内存管理、结构体、文件与多文件项目，以及 C23 新特性。"
+zh-TW = "離硬體最近的高階語言。變數、控制流、函式、陣列、指標、記憶體管理、結構體、檔案與多檔案專案，以及 C23 新特性。"
+en = "The high-level language closest to the hardware: variables, control flow, functions, arrays, pointers, memory, structs, files, multi-file projects and C23."
+ru = "Высокоуровневый язык, ближе всего к железу: переменные, управление, функции, массивы, указатели, память, структуры, файлы, многофайловые проекты и C23."

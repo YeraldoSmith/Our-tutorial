@@ -1,0 +1,16 @@
+id = "cpp"
+language = "cpp"
+icon = "⚙️"
+level = "beginner"
+
+[title]
+zh-CN = "C++"
+zh-TW = "C++"
+en = "C++"
+ru = "C++"
+
+[summary]
+zh-CN = "现代 C++（C++20/23）：从 cout 到类、RAII 与智能指针、模板与 concepts、STL、ranges、移动语义和 CMake。"
+zh-TW = "現代 C++（C++20/23）：從 cout 到類、RAII 與智慧指標、模板與 concepts、STL、ranges、移動語義和 CMake。"
+en = "Modern C++ (C++20/23): from cout to classes, RAII and smart pointers, templates and concepts, the STL, ranges, move semantics and CMake."
+ru = "Современный C++ (C++20/23): от cout до классов, RAII и умных указателей, шаблонов и концептов, STL, ranges, семантики перемещения и CMake."

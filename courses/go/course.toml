@@ -1,0 +1,16 @@
+id = "go"
+language = "go"
+icon = "🐹"
+level = "beginner"
+
+[title]
+zh-CN = "Go"
+zh-TW = "Go"
+en = "Go"
+ru = "Go"
+
+[summary]
+zh-CN = "简洁高效的云原生语言：变量、切片与 map、结构体与方法、接口、错误处理、泛型、goroutine 与 channel、测试与 HTTP 服务。"
+zh-TW = "簡潔高效的雲原生語言：變數、切片與 map、結構體與方法、介面、錯誤處理、泛型、goroutine 與 channel、測試與 HTTP 服務。"
+en = "A simple, efficient language for the cloud: variables, slices and maps, structs and methods, interfaces, errors, generics, goroutines and channels, testing and HTTP."
+ru = "Простой и эффективный язык для облака: переменные, срезы и map, структуры и методы, интерфейсы, ошибки, обобщения, горутины и каналы, тесты и HTTP."

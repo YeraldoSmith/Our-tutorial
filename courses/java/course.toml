@@ -1,0 +1,16 @@
+id = "java"
+language = "java"
+icon = "☕"
+level = "beginner"
+
+[title]
+zh-CN = "Java"
+zh-TW = "Java"
+en = "Java"
+ru = "Java"
+
+[summary]
+zh-CN = "基于 Java 25（长期支持版）：紧凑源文件、面向对象、record 与模式匹配、集合与 Stream、异常、虚拟线程、Maven/Gradle。"
+zh-TW = "基於 Java 25（長期支援版）：緊湊原始檔、物件導向、record 與模式匹配、集合與 Stream、異常、虛擬執行緒、Maven/Gradle。"
+en = "Based on Java 25 (LTS): compact source files, OOP, records and pattern matching, collections and streams, exceptions, virtual threads, Maven/Gradle."
+ru = "На основе Java 25 (LTS): компактные исходники, ООП, record и сопоставление с образцом, коллекции и Stream, исключения, виртуальные потоки, Maven/Gradle."

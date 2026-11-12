@@ -1,0 +1,33 @@
+{
+  "id": "our-tutorial",
+  "repo": "YeraldoSmith/Our-tutorial",
+  "name": {
+    "zh-CN": "Our Tutorial · 从零学编程",
+    "en": "Our Tutorial · Learn to Code from Zero",
+    "ru": "Our Tutorial · Программирование с нуля",
+    "zh-TW": "Our Tutorial · 從零學程式設計"
+  },
+  "description": {
+    "zh-CN": "完全零基础的多语言编程教程：Python、C、C++、Java、Rust、Go、JavaScript/TypeScript、汇编。课文、例子、练习和自动判题，配套跨平台学习程序。",
+    "en": "Programming from absolute zero: Python, C, C++, Java, Rust, Go, JavaScript/TypeScript and assembly. Lessons, examples, exercises with automatic checking, and a cross-platform learning app.",
+    "ru": "Программирование с абсолютного нуля: Python, C, C++, Java, Rust, Go, JavaScript/TypeScript и ассемблер. Уроки, примеры, задания с автопроверкой и кроссплатформенная программа для обучения.",
+    "zh-TW": "完全零基礎的多語言程式設計教程：Python、C、C++、Java、Rust、Go、JavaScript/TypeScript、彙編。課文、例子、練習和自動判題，配套跨平臺學習程式。"
+  },
+  "locales": [
+    "zh-CN",
+    "zh-TW",
+    "en",
+    "ru"
+  ],
+  "courses": [
+    "start",
+    "python",
+    "c",
+    "cpp",
+    "java",
+    "rust",
+    "go",
+    "javascript",
+    "asm"
+  ]
+}

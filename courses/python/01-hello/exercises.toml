@@ -1,0 +1,87 @@
+[[exercise]]
+id = "hello-world"
+kind = "code"
+starter = ""
+solution = '''
+print("Hello, World!")
+'''
+tests = [{ input = "", output = "Hello, World!\n" }]
+
+[[exercise]]
+id = "three-lines"
+kind = "code"
+starter = ""
+[exercise.solution]
+zh-CN = '''
+print("我叫小明")
+print("我在学 Python")
+print("今天是第 1 课")
+'''
+zh-TW = '''
+print("我叫小明")
+print("我在學 Python")
+print("今天是第 1 課")
+'''
+en = '''
+print("My name is Alex")
+print("I am learning Python")
+print("Today is lesson 1")
+'''
+ru = '''
+print("Меня зовут Саша")
+print("Я изучаю Python")
+print("Сегодня урок 1")
+'''
+[exercise.tests]
+zh-CN = [{ input = "", output = "我叫小明\n我在学 Python\n今天是第 1 课\n" }]
+zh-TW = [{ input = "", output = "我叫小明\n我在學 Python\n今天是第 1 課\n" }]
+en = [{ input = "", output = "My name is Alex\nI am learning Python\nToday is lesson 1\n" }]
+ru = [{ input = "", output = "Меня зовут Саша\nЯ изучаю Python\nСегодня урок 1\n" }]
+
+[[exercise]]
+id = "math-print"
+kind = "code"
+starter = ""
+[exercise.solution]
+zh-CN = '''
+print("一年有", 365 * 24, "小时")
+'''
+zh-TW = '''
+print("一年有", 365 * 24, "小時")
+'''
+en = '''
+print("A year has", 365 * 24, "hours")
+'''
+ru = '''
+print("В году", 365 * 24, "часов")
+'''
+[exercise.tests]
+zh-CN = [{ input = "", output = "一年有 8760 小时\n" }]
+zh-TW = [{ input = "", output = "一年有 8760 小時\n" }]
+en = [{ input = "", output = "A year has 8760 hours\n" }]
+ru = [{ input = "", output = "В году 8760 часов\n" }]
+
+[[exercise]]
+id = "sep-end"
+kind = "code"
+starter = '''
+print(2026, 11, 12)
+'''
+solution = '''
+print(2026, 11, 12, sep="/")
+'''
+tests = [{ input = "", output = "2026/11/12\n" }]
+
+[[exercise]]
+id = "predict-1"
+kind = "output"
+answer = '''
+1 + 1
+2
+AB
+'''
+
+[[exercise]]
+id = "choice-error"
+kind = "choice"
+answer = 2

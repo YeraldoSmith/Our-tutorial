@@ -1,0 +1,16 @@
+id = "asm"
+language = "asm"
+icon = "🧠"
+level = "intermediate"
+
+[title]
+zh-CN = "汇编语言（x86-64）"
+zh-TW = "組合語言（x86-64）"
+en = "Assembly (x86-64)"
+ru = "Ассемблер (x86-64)"
+
+[summary]
+zh-CN = "看清程序在 CPU 上到底怎么跑：寄存器、内存寻址、跳转与循环、栈与函数调用约定、调用 C 库、系统调用，读懂编译器输出。"
+zh-TW = "看清程式在 CPU 上到底怎麼跑：暫存器、記憶體定址、跳轉與迴圈、堆疊與函式呼叫約定、呼叫 C 庫、系統呼叫，讀懂編譯器輸出。"
+en = "See what really happens on the CPU: registers, memory addressing, jumps and loops, the stack and calling conventions, calling C, system calls, reading compiler output."
+ru = "Что на самом деле происходит в процессоре: регистры, адресация памяти, переходы и циклы, стек и соглашения о вызовах, вызов C, системные вызовы, чтение вывода компилятора."
