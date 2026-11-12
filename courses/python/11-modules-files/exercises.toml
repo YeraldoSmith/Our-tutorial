@@ -1,0 +1,97 @@
+[[exercise]]
+id = "stats"
+kind = "code"
+starter = '''
+import statistics
+
+nums = list(map(float, input().split()))
+'''
+solution = '''
+import statistics
+
+nums = list(map(float, input().split()))
+print(f"{statistics.mean(nums):.2f} {statistics.median(nums):.2f}")
+'''
+tests = [
+  { input = "3 1 4 1 5 9 2 6\n", output = "3.88 3.50\n" },
+  { input = "1 2 3 4\n", output = "2.50 2.50\n" },
+  { input = "5\n", output = "5.00 5.00\n" },
+  { input = "10 20\n", output = "15.00 15.00\n" },
+]
+
+[[exercise]]
+id = "weekday"
+kind = "code"
+starter = '''
+from datetime import date
+
+d = date.fromisoformat(input())
+'''
+solution = '''
+from datetime import date
+
+d = date.fromisoformat(input())
+print(d.isoweekday(), d.timetuple().tm_yday)
+'''
+tests = [
+  { input = "2025-03-01\n", output = "6 60\n" },
+  { input = "2026-11-12\n", output = "4 316\n" },
+  { input = "2024-12-31\n", output = "2 366\n" },
+  { input = "2000-01-01\n", output = "6 1\n" },
+]
+
+[[exercise]]
+id = "to-json"
+kind = "code"
+starter = '''
+import json
+
+name = input()
+age = int(input())
+'''
+solution = '''
+import json
+
+name = input()
+age = int(input())
+print(json.dumps({"name": name, "age": age}, ensure_ascii=False))
+'''
+tests = [
+  { input = "小明\n12\n", output = "{\"name\": \"小明\", \"age\": 12}\n" },
+  { input = "Tom\n7\n", output = "{\"name\": \"Tom\", \"age\": 7}\n" },
+  { input = "Петя\n30\n", output = "{\"name\": \"Петя\", \"age\": 30}\n" },
+]
+
+[[exercise]]
+id = "file-roundtrip"
+kind = "code"
+starter = '''
+n = int(input())
+texts = [input() for _ in range(n)]
+'''
+solution = '''
+n = int(input())
+texts = [input() for _ in range(n)]
+with open("lines.txt", "w", encoding="utf-8") as f:
+    for t in texts:
+        f.write(t + "\n")
+with open("lines.txt", encoding="utf-8") as f:
+    lines = [line.rstrip("\n") for line in f]
+print(len(lines))
+print(max(lines, key=len))
+'''
+tests = [
+  { input = "3\n苹果\n西瓜和葡萄\n香蕉\n", output = "3\n西瓜和葡萄\n" },
+  { input = "1\nhello\n", output = "1\nhello\n" },
+  { input = "4\nab\ncd\nxyz\nuvw\n", output = "4\nxyz\n" },
+]
+
+[[exercise]]
+id = "why-encoding"
+kind = "choice"
+answer = 1
+
+[[exercise]]
+id = "why-with"
+kind = "choice"
+answer = 1
