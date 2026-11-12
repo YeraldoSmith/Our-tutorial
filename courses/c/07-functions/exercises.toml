@@ -1,0 +1,221 @@
+[[exercise]]
+id = "max3-c"
+kind = "code"
+solution = '''
+#include <stdio.h>
+
+int max3(int a, int b, int c) {
+    int m = a;
+    if (b > m) m = b;
+    if (c > m) m = c;
+    return m;
+}
+
+int main(void) {
+    int a = 0, b = 0, c = 0;
+    scanf("%d %d %d", &a, &b, &c);
+    printf("%d\n", max3(a, b, c));
+    return 0;
+}
+'''
+tests = [
+  { input = "3 9 4\n", output = "9\n" },
+  { input = "-1 -5 -3\n", output = "-1\n" },
+  { input = "7 7 2\n", output = "7\n" },
+  { input = "1 2 3\n", output = "3\n" },
+]
+[exercise.starter]
+zh-CN = '''
+#include <stdio.h>
+
+int max3(int a, int b, int c) {
+    // 在这里写代码
+    return a;
+}
+
+int main(void) {
+    int a = 0, b = 0, c = 0;
+    scanf("%d %d %d", &a, &b, &c);
+    printf("%d\n", max3(a, b, c));
+    return 0;
+}
+'''
+zh-TW = '''
+#include <stdio.h>
+
+int max3(int a, int b, int c) {
+    // 在這裡寫程式碼
+    return a;
+}
+
+int main(void) {
+    int a = 0, b = 0, c = 0;
+    scanf("%d %d %d", &a, &b, &c);
+    printf("%d\n", max3(a, b, c));
+    return 0;
+}
+'''
+en = '''
+#include <stdio.h>
+
+int max3(int a, int b, int c) {
+    // write your code here
+    return a;
+}
+
+int main(void) {
+    int a = 0, b = 0, c = 0;
+    scanf("%d %d %d", &a, &b, &c);
+    printf("%d\n", max3(a, b, c));
+    return 0;
+}
+'''
+ru = '''
+#include <stdio.h>
+
+int max3(int a, int b, int c) {
+    // пишите код здесь
+    return a;
+}
+
+int main(void) {
+    int a = 0, b = 0, c = 0;
+    scanf("%d %d %d", &a, &b, &c);
+    printf("%d\n", max3(a, b, c));
+    return 0;
+}
+'''
+
+[[exercise]]
+id = "gcd"
+kind = "code"
+solution = '''
+#include <stdio.h>
+
+long long gcd(long long a, long long b) {
+    while (b != 0) {
+        long long t = a % b;
+        a = b;
+        b = t;
+    }
+    return a;
+}
+
+int main(void) {
+    long long a = 0, b = 0;
+    scanf("%lld %lld", &a, &b);
+    long long g = gcd(a, b);
+    printf("%lld %lld\n", g, a / g * b);
+    return 0;
+}
+'''
+tests = [
+  { input = "12 18\n", output = "6 36\n" },
+  { input = "7 13\n", output = "1 91\n" },
+  { input = "100 75\n", output = "25 300\n" },
+  { input = "1000000 999999\n", output = "1 999999000000\n" },
+]
+starter = '''
+#include <stdio.h>
+
+int main(void) {
+
+    return 0;
+}
+'''
+
+[[exercise]]
+id = "count-primes"
+kind = "code"
+solution = '''
+#include <stdio.h>
+
+bool is_prime(int n) {
+    if (n < 2) {
+        return false;
+    }
+    for (int d = 2; d * d <= n; d++) {
+        if (n % d == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+int main(void) {
+    int a = 0, b = 0;
+    scanf("%d %d", &a, &b);
+    int count = 0;
+    for (int k = a; k <= b; k++) {
+        if (is_prime(k)) {
+            count++;
+        }
+    }
+    printf("%d\n", count);
+    return 0;
+}
+'''
+tests = [
+  { input = "10 30\n", output = "6\n" },
+  { input = "1 10\n", output = "4\n" },
+  { input = "14 16\n", output = "0\n" },
+  { input = "1 1000\n", output = "168\n" },
+]
+starter = '''
+#include <stdio.h>
+
+int main(void) {
+
+    return 0;
+}
+'''
+
+[[exercise]]
+id = "hanoi"
+kind = "code"
+solution = '''
+#include <stdio.h>
+
+void hanoi(int n, char from, char via, char to) {
+    if (n == 0) {
+        return;
+    }
+    hanoi(n - 1, from, to, via);
+    printf("%c -> %c\n", from, to);
+    hanoi(n - 1, via, from, to);
+}
+
+int main(void) {
+    int n = 0;
+    scanf("%d", &n);
+    hanoi(n, 'A', 'B', 'C');
+    return 0;
+}
+'''
+tests = [
+  { input = "1\n", output = "A -> C\n" },
+  { input = "2\n", output = "A -> B\nA -> C\nB -> C\n" },
+  { input = "3\n", output = "A -> C\nA -> B\nC -> B\nA -> C\nB -> A\nB -> C\nA -> C\n" },
+  { input = "4\n", output = "A -> B\nA -> C\nB -> C\nA -> B\nC -> A\nC -> B\nA -> B\nA -> C\nB -> C\nB -> A\nC -> A\nB -> C\nA -> B\nA -> C\nB -> C\n" },
+]
+starter = '''
+#include <stdio.h>
+
+int main(void) {
+
+    return 0;
+}
+'''
+
+[[exercise]]
+id = "func-predict"
+kind = "output"
+answer = '''
+1 2
+30
+'''
+
+[[exercise]]
+id = "prototype"
+kind = "choice"
+answer = 1
