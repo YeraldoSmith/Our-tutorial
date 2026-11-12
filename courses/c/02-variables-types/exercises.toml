@@ -1,0 +1,111 @@
+[[exercise]]
+id = "profile"
+kind = "code"
+starter = '''
+#include <stdio.h>
+
+int main(void) {
+    int age = 12;
+    double height = 1.523;
+    char grade = 'B';
+
+    return 0;
+}
+'''
+solution = '''
+#include <stdio.h>
+
+int main(void) {
+    int age = 12;
+    double height = 1.523;
+    char grade = 'B';
+    printf("Age: %d, Height: %.2f m, Grade: %c\n", age, height, grade);
+    return 0;
+}
+'''
+tests = [
+  { input = "", output = "Age: 12, Height: 1.52 m, Grade: B\n" },
+]
+
+[[exercise]]
+id = "sizes"
+kind = "code"
+starter = '''
+#include <stdio.h>
+
+int main(void) {
+
+    return 0;
+}
+'''
+solution = '''
+#include <stdio.h>
+
+int main(void) {
+    printf("%zu %zu %zu %zu\n", sizeof(char), sizeof(int), sizeof(double), sizeof(long long));
+    return 0;
+}
+'''
+tests = [
+  { input = "", output = "1 4 8 8\n" },
+]
+
+[[exercise]]
+id = "ascii"
+kind = "code"
+starter = '''
+#include <stdio.h>
+
+int main(void) {
+
+    return 0;
+}
+'''
+solution = '''
+#include <stdio.h>
+
+int main(void) {
+    printf("%d %c\n", 'Z', 97);
+    return 0;
+}
+'''
+tests = [
+  { input = "", output = "90 a\n" },
+]
+
+[[exercise]]
+id = "table"
+kind = "code"
+starter = '''
+#include <stdio.h>
+
+int main(void) {
+
+    return 0;
+}
+'''
+solution = '''
+#include <stdio.h>
+
+int main(void) {
+    printf("%-6s%4d%8.2f\n", "apple", 3, 4.5);
+    printf("%-6s%4d%8.2f\n", "kiwi", 12, 0.75);
+    return 0;
+}
+'''
+tests = [
+  { input = "", output = "apple    3    4.50\nkiwi    12    0.75\n" },
+]
+
+[[exercise]]
+id = "format-predict"
+kind = "output"
+answer = '''
+7 2.5| 5.00|7   |
+bZ
+'''
+
+[[exercise]]
+id = "uninit"
+kind = "choice"
+answer = 1
