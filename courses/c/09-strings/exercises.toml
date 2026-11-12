@@ -1,0 +1,232 @@
+[[exercise]]
+id = "char-classes"
+kind = "code"
+starter = '''
+#include <stdio.h>
+
+int main(void) {
+
+    return 0;
+}
+'''
+solution = '''
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main(void) {
+    char line[1001];
+    if (fgets(line, sizeof line, stdin) == NULL) {
+        line[0] = '\0';
+    }
+    line[strcspn(line, "\n")] = '\0';
+    int letters = 0, digits = 0, spaces = 0, others = 0;
+    for (int i = 0; line[i] != '\0'; i++) {
+        unsigned char c = (unsigned char)line[i];
+        if (isalpha(c)) {
+            letters++;
+        } else if (isdigit(c)) {
+            digits++;
+        } else if (c == ' ') {
+            spaces++;
+        } else {
+            others++;
+        }
+    }
+    printf("%d %d %d %d\n", letters, digits, spaces, others);
+    return 0;
+}
+'''
+tests = [
+  { input = "Hello World 123!\n", output = "10 3 2 1\n" },
+  { input = "abc\n", output = "3 0 0 0\n" },
+  { input = "  \n", output = "0 0 2 0\n" },
+  { input = "C23 is out (2024), finally.\n", output = "13 6 4 4\n" },
+  { input = "x=1+2;\n", output = "1 2 0 3\n" },
+]
+
+[[exercise]]
+id = "palindrome"
+kind = "code"
+starter = '''
+#include <stdio.h>
+
+int main(void) {
+
+    return 0;
+}
+'''
+solution = '''
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main(void) {
+    char s[101];
+    scanf("%100s", s);
+    bool ok = true;
+    int i = 0, j = (int)strlen(s) - 1;
+    while (i < j) {
+        if (tolower((unsigned char)s[i]) != tolower((unsigned char)s[j])) {
+            ok = false;
+            break;
+        }
+        i++;
+        j--;
+    }
+    printf("%s\n", ok ? "yes" : "no");
+    return 0;
+}
+'''
+tests = [
+  { input = "Level\n", output = "yes\n" },
+  { input = "level\n", output = "yes\n" },
+  { input = "abc\n", output = "no\n" },
+  { input = "a\n", output = "yes\n" },
+  { input = "abba\n", output = "yes\n" },
+  { input = "ab\n", output = "no\n" },
+  { input = "RaceCar\n", output = "yes\n" },
+  { input = "Hannah\n", output = "yes\n" },
+  { input = "abca\n", output = "no\n" },
+]
+
+[[exercise]]
+id = "caesar"
+kind = "code"
+starter = '''
+#include <stdio.h>
+
+int main(void) {
+
+    return 0;
+}
+'''
+solution = '''
+#include <stdio.h>
+#include <string.h>
+
+int main(void) {
+    int k = 0;
+    char line[1001];
+    scanf("%d", &k);
+    int ch;
+    while ((ch = getchar()) != '\n' && ch != EOF) {
+    }
+    if (fgets(line, sizeof line, stdin) == NULL) {
+        line[0] = '\0';
+    }
+    line[strcspn(line, "\n")] = '\0';
+    for (int i = 0; line[i] != '\0'; i++) {
+        char c = line[i];
+        if (c >= 'a' && c <= 'z') {
+            line[i] = (char)('a' + (c - 'a' + k) % 26);
+        } else if (c >= 'A' && c <= 'Z') {
+            line[i] = (char)('A' + (c - 'A' + k) % 26);
+        }
+    }
+    printf("%s\n", line);
+    return 0;
+}
+'''
+tests = [
+  { input = "3\nHello, World!\n", output = "Khoor, Zruog!\n" },
+  { input = "0\nSame text.\n", output = "Same text.\n" },
+  { input = "25\nabc XYZ\n", output = "zab WXY\n" },
+  { input = "13\nWhy did the chicken cross the road?\n", output = "Jul qvq gur puvpxra pebff gur ebnq?\n" },
+  { input = "1\nzZ 9\n", output = "aA 9\n" },
+]
+
+[[exercise]]
+id = "word-count"
+kind = "code"
+starter = '''
+#include <stdio.h>
+
+int main(void) {
+
+    return 0;
+}
+'''
+solution = '''
+#include <stdio.h>
+#include <string.h>
+
+int main(void) {
+    char line[1001];
+    if (fgets(line, sizeof line, stdin) == NULL) {
+        line[0] = '\0';
+    }
+    line[strcspn(line, "\n")] = '\0';
+    int words = 0;
+    for (int i = 0; line[i] != '\0'; i++) {
+        if (line[i] != ' ' && (i == 0 || line[i - 1] == ' ')) {
+            words++;
+        }
+    }
+    printf("%d\n", words);
+    return 0;
+}
+'''
+tests = [
+  { input = "  the quick  brown fox \n", output = "4\n" },
+  { input = "hello\n", output = "1\n" },
+  { input = "\n", output = "0\n" },
+  { input = "   \n", output = "0\n" },
+  { input = "one two three four five six\n", output = "6\n" },
+]
+
+[[exercise]]
+id = "title-case"
+kind = "code"
+starter = '''
+#include <stdio.h>
+
+int main(void) {
+
+    return 0;
+}
+'''
+solution = '''
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main(void) {
+    char line[1001];
+    if (fgets(line, sizeof line, stdin) == NULL) {
+        line[0] = '\0';
+    }
+    line[strcspn(line, "\n")] = '\0';
+    for (int i = 0; line[i] != '\0'; i++) {
+        unsigned char c = (unsigned char)line[i];
+        if (i == 0 || line[i - 1] == ' ') {
+            line[i] = (char)toupper(c);
+        } else {
+            line[i] = (char)tolower(c);
+        }
+    }
+    printf("%s\n", line);
+    return 0;
+}
+'''
+tests = [
+  { input = "hello wORLD from c\n", output = "Hello World From C\n" },
+  { input = "a\n", output = "A\n" },
+  { input = "the C PROGRAMMING language\n", output = "The C Programming Language\n" },
+  { input = "  two  spaces\n", output = "  Two  Spaces\n" },
+  { input = "x1 y2\n", output = "X1 Y2\n" },
+]
+
+[[exercise]]
+id = "str-predict"
+kind = "output"
+answer = '''
+3 10
+a 1
+1
+'''
+
+[[exercise]]
+id = "str-compare"
+kind = "choice"
+answer = 1
