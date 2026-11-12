@@ -8,6 +8,7 @@ A programming course that starts from **absolute zero**, in several languages, w
 - 🌏 **Lessons in 4 languages**: Simplified Chinese, Traditional Chinese, English, Russian; the app's interface also speaks Japanese, Korean, Spanish, French and German
 - ✍️ **Exercises in every lesson**: multiple choice, "predict the output" and coding tasks that the app **checks automatically**
 - 💬 **Error messages explained**: compiler and interpreter errors get a plain-language explanation in your language (e.g. "you typed a full-width bracket")
+- 🧪 **C/C++ memory check**: turn it on in "Tools → Settings…", and out-of-bounds array access, use after free, memory leaks and similar bugs are caught when they happen, with the line number (based on AddressSanitizer; not available with MinGW on Windows)
 - 🖥️ **A real desktop app** (not a web page) for Windows, macOS and Linux: read, write, run and practise in one window
 - 🆕 **Modern content**: Python 3.14 and uv, C23, C++23, Java 25 (LTS), Rust 2024, Go 1.2x, Node.js running TypeScript directly…
 
