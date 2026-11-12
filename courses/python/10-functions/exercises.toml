@@ -1,0 +1,258 @@
+[[exercise]]
+id = "max3"
+kind = "code"
+solution = '''
+def max3(a, b, c):
+    biggest = a
+    if b > biggest:
+        biggest = b
+    if c > biggest:
+        biggest = c
+    return biggest
+
+
+a, b, c = map(int, input().split())
+print(max3(a, b, c))
+'''
+tests = [
+  { input = "3 9 4\n", output = "9\n" },
+  { input = "-1 -5 -3\n", output = "-1\n" },
+  { input = "7 7 2\n", output = "7\n" },
+  { input = "1 2 3\n", output = "3\n" },
+]
+
+[exercise.starter]
+zh-CN = '''
+def max3(a, b, c):
+    # 在这里写代码
+    pass
+
+
+a, b, c = map(int, input().split())
+print(max3(a, b, c))
+'''
+zh-TW = '''
+def max3(a, b, c):
+    # 在這裡寫程式碼
+    pass
+
+
+a, b, c = map(int, input().split())
+print(max3(a, b, c))
+'''
+en = '''
+def max3(a, b, c):
+    # write your code here
+    pass
+
+
+a, b, c = map(int, input().split())
+print(max3(a, b, c))
+'''
+ru = '''
+def max3(a, b, c):
+    # пишите код здесь
+    pass
+
+
+a, b, c = map(int, input().split())
+print(max3(a, b, c))
+'''
+
+
+[[exercise]]
+id = "is-prime"
+kind = "code"
+solution = '''
+def is_prime(n):
+    if n < 2:
+        return False
+    for d in range(2, int(n ** 0.5) + 1):
+        if n % d == 0:
+            return False
+    return True
+
+
+n = int(input())
+print("yes" if is_prime(n) else "no")
+'''
+tests = [
+  { input = "97\n", output = "yes\n" },
+  { input = "1\n", output = "no\n" },
+  { input = "2\n", output = "yes\n" },
+  { input = "9\n", output = "no\n" },
+  { input = "0\n", output = "no\n" },
+  { input = "7919\n", output = "yes\n" },
+  { input = "1000000\n", output = "no\n" },
+]
+
+[exercise.starter]
+zh-CN = '''
+def is_prime(n):
+    # 在这里写代码
+    pass
+
+
+n = int(input())
+print("yes" if is_prime(n) else "no")
+'''
+zh-TW = '''
+def is_prime(n):
+    # 在這裡寫程式碼
+    pass
+
+
+n = int(input())
+print("yes" if is_prime(n) else "no")
+'''
+en = '''
+def is_prime(n):
+    # write your code here
+    pass
+
+
+n = int(input())
+print("yes" if is_prime(n) else "no")
+'''
+ru = '''
+def is_prime(n):
+    # пишите код здесь
+    pass
+
+
+n = int(input())
+print("yes" if is_prime(n) else "no")
+'''
+
+
+[[exercise]]
+id = "grade"
+kind = "code"
+solution = '''
+def grade(score):
+    if score >= 90:
+        return "A"
+    elif score >= 80:
+        return "B"
+    elif score >= 70:
+        return "C"
+    elif score >= 60:
+        return "D"
+    else:
+        return "F"
+
+
+scores = list(map(int, input().split()))
+print(" ".join(grade(s) for s in scores))
+'''
+tests = [
+  { input = "95 82 60 59\n", output = "A B D F\n" },
+  { input = "100 90 89 70 69 0\n", output = "A A B C D F\n" },
+  { input = "75\n", output = "C\n" },
+]
+
+[exercise.starter]
+zh-CN = '''
+def grade(score):
+    # 在这里写代码
+    pass
+
+
+scores = list(map(int, input().split()))
+print(" ".join(grade(s) for s in scores))
+'''
+zh-TW = '''
+def grade(score):
+    # 在這裡寫程式碼
+    pass
+
+
+scores = list(map(int, input().split()))
+print(" ".join(grade(s) for s in scores))
+'''
+en = '''
+def grade(score):
+    # write your code here
+    pass
+
+
+scores = list(map(int, input().split()))
+print(" ".join(grade(s) for s in scores))
+'''
+ru = '''
+def grade(score):
+    # пишите код здесь
+    pass
+
+
+scores = list(map(int, input().split()))
+print(" ".join(grade(s) for s in scores))
+'''
+
+
+[[exercise]]
+id = "factorial"
+kind = "code"
+solution = '''
+def factorial(n):
+    if n == 0:
+        return 1
+    return n * factorial(n - 1)
+
+
+print(factorial(int(input())))
+'''
+tests = [
+  { input = "5\n", output = "120\n" },
+  { input = "0\n", output = "1\n" },
+  { input = "1\n", output = "1\n" },
+  { input = "20\n", output = "2432902008176640000\n" },
+]
+
+[exercise.starter]
+zh-CN = '''
+def factorial(n):
+    # 在这里写代码
+    pass
+
+
+print(factorial(int(input())))
+'''
+zh-TW = '''
+def factorial(n):
+    # 在這裡寫程式碼
+    pass
+
+
+print(factorial(int(input())))
+'''
+en = '''
+def factorial(n):
+    # write your code here
+    pass
+
+
+print(factorial(int(input())))
+'''
+ru = '''
+def factorial(n):
+    # пишите код здесь
+    pass
+
+
+print(factorial(int(input())))
+'''
+
+
+[[exercise]]
+id = "scope-predict"
+kind = "output"
+answer = '''
+10 11
+None
+'''
+
+[[exercise]]
+id = "mutable-default"
+kind = "choice"
+answer = 1
