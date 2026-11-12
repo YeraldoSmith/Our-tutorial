@@ -1,0 +1,58 @@
+[[exercise]]
+id = "time-convert"
+kind = "code"
+starter = '''
+total = 7384
+'''
+solution = '''
+total = 7384
+hours = total // 3600
+minutes = total % 3600 // 60
+seconds = total % 60
+print(hours, minutes, seconds)
+'''
+tests = [{ input = "", output = "2 3 4\n" }]
+
+[[exercise]]
+id = "circle"
+kind = "code"
+starter = '''
+import math
+
+r = 3
+'''
+solution = '''
+import math
+
+r = 3
+area = math.pi * r ** 2
+print(f"{area:.2f}")
+'''
+tests = [{ input = "", output = "28.27\n" }]
+
+[[exercise]]
+id = "digits"
+kind = "code"
+starter = '''
+n = 472
+'''
+solution = '''
+n = 472
+print(n // 100, n // 10 % 10, n % 10)
+'''
+tests = [{ input = "", output = "4 7 2\n" }]
+
+[[exercise]]
+id = "predict-ops"
+kind = "output"
+answer = '''
+3
+2
+14
+2.5
+'''
+
+[[exercise]]
+id = "precedence"
+kind = "choice"
+answer = 1

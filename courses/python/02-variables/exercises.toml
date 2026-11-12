@@ -1,0 +1,66 @@
+[[exercise]]
+id = "rectangle"
+kind = "code"
+starter = '''
+width = 8
+height = 5
+'''
+solution = '''
+width = 8
+height = 5
+area = width * height
+print(area)
+'''
+tests = [{ input = "", output = "40\n" }]
+
+[[exercise]]
+id = "swap"
+kind = "code"
+starter = '''
+a = 1
+b = 2
+
+print(a, b)
+'''
+solution = '''
+a = 1
+b = 2
+a, b = b, a
+print(a, b)
+'''
+tests = [{ input = "", output = "2 1\n" }]
+
+[[exercise]]
+id = "valid-name"
+kind = "choice"
+answer = 2
+
+[[exercise]]
+id = "predict-vars"
+kind = "output"
+answer = '''
+15 20
+xy
+9
+'''
+
+[[exercise]]
+id = "fstring-card"
+kind = "code"
+starter = '''
+name = "Alice"
+age = 20
+city = "Paris"
+'''
+solution = '''
+name = "Alice"
+age = 20
+city = "Paris"
+print(f"Name: {name}, Age: {age}, City: {city}")
+'''
+tests = [{ input = "", output = "Name: Alice, Age: 20, City: Paris\n" }]
+
+[[exercise]]
+id = "types"
+kind = "choice"
+answer = 2

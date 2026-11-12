@@ -1,0 +1,63 @@
+[[exercise]]
+id = "reverse"
+kind = "code"
+starter = '''
+s = "stressed"
+'''
+solution = '''
+s = "stressed"
+print(s[::-1])
+'''
+tests = [{ input = "", output = "desserts\n" }]
+
+[[exercise]]
+id = "slice-predict"
+kind = "output"
+answer = '''
+H d
+World
+HELLO
+12
+'''
+
+[[exercise]]
+id = "clean-name"
+kind = "code"
+starter = '''
+raw = "   aLiCe SMITH  "
+'''
+solution = '''
+raw = "   aLiCe SMITH  "
+print(raw.strip().title())
+'''
+tests = [{ input = "", output = "Alice Smith\n" }]
+
+[[exercise]]
+id = "date-format"
+kind = "code"
+starter = '''
+date = "2026-11-12"
+'''
+solution = '''
+date = "2026-11-12"
+parts = date.split("-")
+print(parts[2] + "/" + parts[1] + "/" + parts[0])
+'''
+tests = [{ input = "", output = "12/11/2026\n" }]
+
+[[exercise]]
+id = "immutable"
+kind = "choice"
+answer = 1
+
+[[exercise]]
+id = "count-vowels"
+kind = "code"
+starter = '''
+text = "programming is fun"
+'''
+solution = '''
+text = "programming is fun"
+print(text.count("a") + text.count("i") + text.count("o") + text.count("u"))
+'''
+tests = [{ input = "", output = "5\n" }]

@@ -1,0 +1,62 @@
+[[exercise]]
+id = "greet"
+kind = "code"
+starter = ""
+solution = '''
+name = input()
+print(f"Hello, {name}!")
+'''
+tests = [
+  { input = "Alice\n", output = "Hello, Alice!\n" },
+  { input = "Python\n", output = "Hello, Python!\n" },
+]
+
+[[exercise]]
+id = "sum-two"
+kind = "code"
+starter = ""
+solution = '''
+a = int(input())
+b = int(input())
+print(a + b)
+'''
+tests = [
+  { input = "3\n5\n", output = "8\n" },
+  { input = "-10\n4\n", output = "-6\n" },
+  { input = "123456789\n987654321\n", output = "1111111110\n" },
+]
+
+[[exercise]]
+id = "rectangle-line"
+kind = "code"
+starter = ""
+solution = '''
+w, h = map(int, input().split())
+print(w * h, 2 * (w + h))
+'''
+tests = [
+  { input = "4 7\n", output = "28 22\n" },
+  { input = "1 1\n", output = "1 4\n" },
+  { input = "10 3\n", output = "30 26\n" },
+]
+
+[[exercise]]
+id = "celsius"
+kind = "code"
+starter = ""
+solution = '''
+c = float(input())
+f = c * 9 / 5 + 32
+print(f"{f:.1f}")
+'''
+tests = [
+  { input = "36.6\n", output = "97.9\n" },
+  { input = "0\n", output = "32.0\n" },
+  { input = "-40\n", output = "-40.0\n" },
+  { input = "100\n", output = "212.0\n" },
+]
+
+[[exercise]]
+id = "input-type"
+kind = "choice"
+answer = 2

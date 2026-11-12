@@ -1,0 +1,97 @@
+[[exercise]]
+id = "odd-even"
+kind = "code"
+starter = ""
+solution = '''
+n = int(input())
+if n % 2 == 0:
+    print("even")
+else:
+    print("odd")
+'''
+tests = [
+  { input = "7\n", output = "odd\n" },
+  { input = "10\n", output = "even\n" },
+  { input = "0\n", output = "even\n" },
+  { input = "-3\n", output = "odd\n" },
+]
+
+[[exercise]]
+id = "grade"
+kind = "code"
+starter = ""
+solution = '''
+score = int(input())
+if score >= 90:
+    print("A")
+elif score >= 80:
+    print("B")
+elif score >= 70:
+    print("C")
+elif score >= 60:
+    print("D")
+else:
+    print("F")
+'''
+tests = [
+  { input = "85\n", output = "B\n" },
+  { input = "90\n", output = "A\n" },
+  { input = "100\n", output = "A\n" },
+  { input = "79\n", output = "C\n" },
+  { input = "60\n", output = "D\n" },
+  { input = "59\n", output = "F\n" },
+  { input = "0\n", output = "F\n" },
+]
+
+[[exercise]]
+id = "leap"
+kind = "code"
+starter = ""
+solution = '''
+y = int(input())
+if (y % 4 == 0 and y % 100 != 0) or y % 400 == 0:
+    print("leap")
+else:
+    print("common")
+'''
+tests = [
+  { input = "1900\n", output = "common\n" },
+  { input = "2000\n", output = "leap\n" },
+  { input = "2024\n", output = "leap\n" },
+  { input = "2026\n", output = "common\n" },
+]
+
+[[exercise]]
+id = "max3"
+kind = "code"
+starter = ""
+solution = '''
+a, b, c = map(int, input().split())
+biggest = a
+if b > biggest:
+    biggest = b
+if c > biggest:
+    biggest = c
+print(biggest)
+'''
+tests = [
+  { input = "3 9 4\n", output = "9\n" },
+  { input = "10 2 3\n", output = "10\n" },
+  { input = "1 2 30\n", output = "30\n" },
+  { input = "-5 -2 -9\n", output = "-2\n" },
+  { input = "7 7 7\n", output = "7\n" },
+]
+
+[[exercise]]
+id = "predict-if"
+kind = "output"
+answer = '''
+A
+C
+F
+'''
+
+[[exercise]]
+id = "or-trap"
+kind = "choice"
+answer = 1
