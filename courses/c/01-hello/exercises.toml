@@ -1,0 +1,107 @@
+[[exercise]]
+id = "hello-c"
+kind = "code"
+starter = '''
+#include <stdio.h>
+
+int main(void) {
+
+    return 0;
+}
+'''
+solution = '''
+#include <stdio.h>
+
+int main(void) {
+    printf("Hello, C!\n");
+    return 0;
+}
+'''
+tests = [
+  { input = "", output = "Hello, C!\n" },
+]
+
+[[exercise]]
+id = "triangle"
+kind = "code"
+starter = '''
+#include <stdio.h>
+
+int main(void) {
+
+    return 0;
+}
+'''
+solution = '''
+#include <stdio.h>
+
+int main(void) {
+    printf("*\n**\n***\n****\n");
+    return 0;
+}
+'''
+tests = [
+  { input = "", output = "*\n**\n***\n****\n" },
+]
+
+[[exercise]]
+id = "escapes"
+kind = "code"
+starter = '''
+#include <stdio.h>
+
+int main(void) {
+
+    return 0;
+}
+'''
+solution = '''
+#include <stdio.h>
+
+int main(void) {
+    printf("\"C\" is fun!\n");
+    printf("Path: C:\\new\n");
+    printf("100%% done\n");
+    return 0;
+}
+'''
+tests = [
+  { input = "", output = "\"C\" is fun!\nPath: C:\\new\n100% done\n" },
+]
+
+[[exercise]]
+id = "fix-errors"
+kind = "code"
+starter = '''
+int main(void) {
+    printf("I can fix errors.\n")；
+    pritnf("Compiler is my friend.\n");
+    return 0;
+}
+'''
+solution = '''
+#include <stdio.h>
+
+int main(void) {
+    printf("I can fix errors.\n");
+    printf("Compiler is my friend.\n");
+    return 0;
+}
+'''
+tests = [
+  { input = "", output = "I can fix errors.\nCompiler is my friend.\n" },
+]
+
+[[exercise]]
+id = "printf-predict"
+kind = "output"
+answer = '''
+AB
+C
+D
+'''
+
+[[exercise]]
+id = "return-zero"
+kind = "choice"
+answer = 1
