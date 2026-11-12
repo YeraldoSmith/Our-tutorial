@@ -1,0 +1,96 @@
+[[exercise]]
+id = "version-compare"
+kind = "code"
+starter = '''
+a, b = input().split()
+'''
+solution = '''
+a, b = input().split()
+va = [int(x) for x in a.split(".")]
+vb = [int(x) for x in b.split(".")]
+n = max(len(va), len(vb))
+va += [0] * (n - len(va))
+vb += [0] * (n - len(vb))
+if va > vb:
+    print(a)
+elif vb > va:
+    print(b)
+else:
+    print("equal")
+'''
+tests = [
+  { input = "1.10.0 1.9.3\n", output = "1.10.0\n" },
+  { input = "2.0 2.0.0\n", output = "equal\n" },
+  { input = "0.9.12 0.10\n", output = "0.10\n" },
+  { input = "3.13.1 3.13.10\n", output = "3.13.10\n" },
+  { input = "1 1.0.1\n", output = "1.0.1\n" },
+]
+
+[[exercise]]
+id = "snake-case"
+kind = "code"
+starter = '''
+name = input()
+'''
+solution = '''
+name = input()
+result = ""
+for ch in name:
+    if ch.isupper():
+        result += "_" + ch.lower()
+    else:
+        result += ch
+print(result)
+'''
+tests = [
+  { input = "getUserName\n", output = "get_user_name\n" },
+  { input = "totalCount\n", output = "total_count\n" },
+  { input = "x\n", output = "x\n" },
+  { input = "maxValue2\n", output = "max_value2\n" },
+  { input = "aBC\n", output = "a_b_c\n" },
+]
+
+[[exercise]]
+id = "fix-clamp"
+kind = "code"
+starter = '''
+def clamp(x, lo, hi):
+    if x < lo:
+        return hi
+    if x > hi:
+        return lo
+    return x
+
+
+assert clamp(5, 0, 10) == 5
+assert clamp(-3, 0, 10) == 0
+assert clamp(42, 0, 10) == 10
+assert clamp(0, 0, 10) == 0
+assert clamp(7, 7, 7) == 7
+print("all tests passed")
+'''
+solution = '''
+def clamp(x, lo, hi):
+    return max(lo, min(x, hi))
+
+
+assert clamp(5, 0, 10) == 5
+assert clamp(-3, 0, 10) == 0
+assert clamp(42, 0, 10) == 10
+assert clamp(0, 0, 10) == 0
+assert clamp(7, 7, 7) == 7
+print("all tests passed")
+'''
+tests = [
+  { input = "", output = "all tests passed\n" },
+]
+
+[[exercise]]
+id = "why-venv"
+kind = "choice"
+answer = 1
+
+[[exercise]]
+id = "tool-roles"
+kind = "choice"
+answer = 1
