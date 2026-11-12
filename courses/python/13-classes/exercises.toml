@@ -1,0 +1,518 @@
+[[exercise]]
+id = "rectangle"
+kind = "code"
+solution = '''
+class Rectangle:
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        return self.width * self.height
+
+    def perimeter(self):
+        return 2 * (self.width + self.height)
+
+
+w, h = map(int, input().split())
+r = Rectangle(w, h)
+print(r.area(), r.perimeter())
+'''
+tests = [
+  { input = "3 4\n", output = "12 14\n" },
+  { input = "1 1\n", output = "1 4\n" },
+  { input = "10 0\n", output = "0 20\n" },
+]
+[exercise.starter]
+zh-CN = '''
+class Rectangle:
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        # 在这里写代码
+        pass
+
+    def perimeter(self):
+        # 在这里写代码
+        pass
+
+
+w, h = map(int, input().split())
+r = Rectangle(w, h)
+print(r.area(), r.perimeter())
+'''
+zh-TW = '''
+class Rectangle:
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        # 在這裡寫程式碼
+        pass
+
+    def perimeter(self):
+        # 在這裡寫程式碼
+        pass
+
+
+w, h = map(int, input().split())
+r = Rectangle(w, h)
+print(r.area(), r.perimeter())
+'''
+en = '''
+class Rectangle:
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        # write your code here
+        pass
+
+    def perimeter(self):
+        # write your code here
+        pass
+
+
+w, h = map(int, input().split())
+r = Rectangle(w, h)
+print(r.area(), r.perimeter())
+'''
+ru = '''
+class Rectangle:
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        # пишите код здесь
+        pass
+
+    def perimeter(self):
+        # пишите код здесь
+        pass
+
+
+w, h = map(int, input().split())
+r = Rectangle(w, h)
+print(r.area(), r.perimeter())
+'''
+
+[[exercise]]
+id = "bank"
+kind = "code"
+solution = '''
+class BankAccount:
+    def __init__(self):
+        self.balance = 0
+
+    def deposit(self, amount):
+        self.balance += amount
+
+    def withdraw(self, amount):
+        if amount > self.balance:
+            return False
+        self.balance -= amount
+        return True
+
+
+acc = BankAccount()
+while True:
+    parts = input().split()
+    if parts[0] == "end":
+        break
+    if parts[0] == "deposit":
+        acc.deposit(int(parts[1]))
+    elif parts[0] == "withdraw":
+        if not acc.withdraw(int(parts[1])):
+            print("insufficient funds")
+    elif parts[0] == "balance":
+        print(acc.balance)
+'''
+tests = [
+  { input = "deposit 100\nwithdraw 30\nwithdraw 500\nbalance\nend\n", output = "insufficient funds\n70\n" },
+  { input = "balance\nwithdraw 1\ndeposit 5\nwithdraw 5\nbalance\nend\n", output = "0\ninsufficient funds\n0\n" },
+  { input = "deposit 10\ndeposit 20\nbalance\nwithdraw 30\nbalance\nend\n", output = "30\n0\n" },
+]
+[exercise.starter]
+zh-CN = '''
+class BankAccount:
+    def __init__(self):
+        self.balance = 0
+
+    def deposit(self, amount):
+        # 在这里写代码
+        pass
+
+    def withdraw(self, amount):
+        # 在这里写代码
+        return True
+
+
+acc = BankAccount()
+while True:
+    parts = input().split()
+    if parts[0] == "end":
+        break
+    if parts[0] == "deposit":
+        acc.deposit(int(parts[1]))
+    elif parts[0] == "withdraw":
+        if not acc.withdraw(int(parts[1])):
+            print("insufficient funds")
+    elif parts[0] == "balance":
+        print(acc.balance)
+'''
+zh-TW = '''
+class BankAccount:
+    def __init__(self):
+        self.balance = 0
+
+    def deposit(self, amount):
+        # 在這裡寫程式碼
+        pass
+
+    def withdraw(self, amount):
+        # 在這裡寫程式碼
+        return True
+
+
+acc = BankAccount()
+while True:
+    parts = input().split()
+    if parts[0] == "end":
+        break
+    if parts[0] == "deposit":
+        acc.deposit(int(parts[1]))
+    elif parts[0] == "withdraw":
+        if not acc.withdraw(int(parts[1])):
+            print("insufficient funds")
+    elif parts[0] == "balance":
+        print(acc.balance)
+'''
+en = '''
+class BankAccount:
+    def __init__(self):
+        self.balance = 0
+
+    def deposit(self, amount):
+        # write your code here
+        pass
+
+    def withdraw(self, amount):
+        # write your code here
+        return True
+
+
+acc = BankAccount()
+while True:
+    parts = input().split()
+    if parts[0] == "end":
+        break
+    if parts[0] == "deposit":
+        acc.deposit(int(parts[1]))
+    elif parts[0] == "withdraw":
+        if not acc.withdraw(int(parts[1])):
+            print("insufficient funds")
+    elif parts[0] == "balance":
+        print(acc.balance)
+'''
+ru = '''
+class BankAccount:
+    def __init__(self):
+        self.balance = 0
+
+    def deposit(self, amount):
+        # пишите код здесь
+        pass
+
+    def withdraw(self, amount):
+        # пишите код здесь
+        return True
+
+
+acc = BankAccount()
+while True:
+    parts = input().split()
+    if parts[0] == "end":
+        break
+    if parts[0] == "deposit":
+        acc.deposit(int(parts[1]))
+    elif parts[0] == "withdraw":
+        if not acc.withdraw(int(parts[1])):
+            print("insufficient funds")
+    elif parts[0] == "balance":
+        print(acc.balance)
+'''
+
+[[exercise]]
+id = "shapes"
+kind = "code"
+solution = '''
+import math
+
+
+class Shape:
+    def area(self):
+        return 0.0
+
+
+class Circle(Shape):
+    def __init__(self, r):
+        self.r = r
+
+    def area(self):
+        return math.pi * self.r ** 2
+
+
+class Square(Shape):
+    def __init__(self, a):
+        self.a = a
+
+    def area(self):
+        return self.a ** 2
+
+
+shapes = []
+while True:
+    parts = input().split()
+    if parts[0] == "end":
+        break
+    size = float(parts[1])
+    shapes.append(Circle(size) if parts[0] == "circle" else Square(size))
+for shape in shapes:
+    print(f"{shape.area():.2f}")
+'''
+tests = [
+  { input = "circle 1\nsquare 2\nend\n", output = "3.14\n4.00\n" },
+  { input = "square 1.5\ncircle 2\ncircle 0.5\nend\n", output = "2.25\n12.57\n0.79\n" },
+  { input = "end\n", output = "" },
+]
+[exercise.starter]
+zh-CN = '''
+import math
+
+
+class Shape:
+    def area(self):
+        return 0.0
+
+
+class Circle(Shape):
+    def __init__(self, r):
+        self.r = r
+
+    def area(self):
+        # 在这里写代码
+        pass
+
+
+class Square(Shape):
+    def __init__(self, a):
+        self.a = a
+
+    def area(self):
+        # 在这里写代码
+        pass
+
+
+shapes = []
+while True:
+    parts = input().split()
+    if parts[0] == "end":
+        break
+    size = float(parts[1])
+    shapes.append(Circle(size) if parts[0] == "circle" else Square(size))
+for shape in shapes:
+    print(f"{shape.area():.2f}")
+'''
+zh-TW = '''
+import math
+
+
+class Shape:
+    def area(self):
+        return 0.0
+
+
+class Circle(Shape):
+    def __init__(self, r):
+        self.r = r
+
+    def area(self):
+        # 在這裡寫程式碼
+        pass
+
+
+class Square(Shape):
+    def __init__(self, a):
+        self.a = a
+
+    def area(self):
+        # 在這裡寫程式碼
+        pass
+
+
+shapes = []
+while True:
+    parts = input().split()
+    if parts[0] == "end":
+        break
+    size = float(parts[1])
+    shapes.append(Circle(size) if parts[0] == "circle" else Square(size))
+for shape in shapes:
+    print(f"{shape.area():.2f}")
+'''
+en = '''
+import math
+
+
+class Shape:
+    def area(self):
+        return 0.0
+
+
+class Circle(Shape):
+    def __init__(self, r):
+        self.r = r
+
+    def area(self):
+        # write your code here
+        pass
+
+
+class Square(Shape):
+    def __init__(self, a):
+        self.a = a
+
+    def area(self):
+        # write your code here
+        pass
+
+
+shapes = []
+while True:
+    parts = input().split()
+    if parts[0] == "end":
+        break
+    size = float(parts[1])
+    shapes.append(Circle(size) if parts[0] == "circle" else Square(size))
+for shape in shapes:
+    print(f"{shape.area():.2f}")
+'''
+ru = '''
+import math
+
+
+class Shape:
+    def area(self):
+        return 0.0
+
+
+class Circle(Shape):
+    def __init__(self, r):
+        self.r = r
+
+    def area(self):
+        # пишите код здесь
+        pass
+
+
+class Square(Shape):
+    def __init__(self, a):
+        self.a = a
+
+    def area(self):
+        # пишите код здесь
+        pass
+
+
+shapes = []
+while True:
+    parts = input().split()
+    if parts[0] == "end":
+        break
+    size = float(parts[1])
+    shapes.append(Circle(size) if parts[0] == "circle" else Square(size))
+for shape in shapes:
+    print(f"{shape.area():.2f}")
+'''
+
+[[exercise]]
+id = "dataclass-sort"
+kind = "code"
+solution = '''
+from dataclasses import dataclass
+
+
+@dataclass
+class Student:
+    name: str
+    score: int
+
+
+n = int(input())
+students = []
+for _ in range(n):
+    name, score = input().split()
+    students.append(Student(name, int(score)))
+students.sort(key=lambda s: (-s.score, s.name))
+for s in students:
+    print(s.name)
+'''
+tests = [
+  { input = "3\nTom 80\nAmy 95\nBob 80\n", output = "Amy\nBob\nTom\n" },
+  { input = "1\nZed 0\n", output = "Zed\n" },
+  { input = "4\nb 1\na 1\nd 2\nc 2\n", output = "c\nd\na\nb\n" },
+]
+[exercise.starter]
+zh-CN = '''
+from dataclasses import dataclass
+
+
+# 在这里写代码
+
+
+n = int(input())
+'''
+zh-TW = '''
+from dataclasses import dataclass
+
+
+# 在這裡寫程式碼
+
+
+n = int(input())
+'''
+en = '''
+from dataclasses import dataclass
+
+
+# write your code here
+
+
+n = int(input())
+'''
+ru = '''
+from dataclasses import dataclass
+
+
+# пишите код здесь
+
+
+n = int(input())
+'''
+
+[[exercise]]
+id = "counter-predict"
+kind = "output"
+answer = '''
+2 1 2
+'''
+
+[[exercise]]
+id = "what-is-self"
+kind = "choice"
+answer = 1
