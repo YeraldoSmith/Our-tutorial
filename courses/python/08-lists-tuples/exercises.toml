@@ -1,0 +1,74 @@
+[[exercise]]
+id = "average"
+kind = "code"
+starter = ""
+solution = '''
+n = int(input())
+nums = list(map(int, input().split()))
+print(f"{sum(nums) / n:.2f}")
+'''
+tests = [
+  { input = "4\n90 85 77 60\n", output = "78.00\n" },
+  { input = "1\n5\n", output = "5.00\n" },
+  { input = "3\n1 2 2\n", output = "1.67\n" },
+]
+
+[[exercise]]
+id = "sort-desc"
+kind = "code"
+starter = ""
+solution = '''
+nums = list(map(int, input().split()))
+nums.sort(reverse=True)
+print(" ".join(str(x) for x in nums))
+'''
+tests = [
+  { input = "3 1 4 1 5 9 2 6\n", output = "9 6 5 4 3 2 1 1\n" },
+  { input = "-1 -5 0\n", output = "0 -1 -5\n" },
+  { input = "7\n", output = "7\n" },
+]
+
+[[exercise]]
+id = "unique"
+kind = "code"
+starter = ""
+solution = '''
+words = input().split()
+result = []
+for word in words:
+    if word not in result:
+        result.append(word)
+print(" ".join(result))
+'''
+tests = [
+  { input = "apple banana apple cherry banana\n", output = "apple banana cherry\n" },
+  { input = "a a a\n", output = "a\n" },
+  { input = "x y z\n", output = "x y z\n" },
+]
+
+[[exercise]]
+id = "evens-squared"
+kind = "code"
+starter = ""
+solution = '''
+nums = list(map(int, input().split()))
+squares = [x * x for x in nums if x % 2 == 0]
+print(" ".join(str(x) for x in squares))
+'''
+tests = [
+  { input = "1 2 3 4 5 6\n", output = "4 16 36\n" },
+  { input = "10 -2 7\n", output = "100 4\n" },
+]
+
+[[exercise]]
+id = "alias-predict"
+kind = "output"
+answer = '''
+[1, 2, 3, 4]
+4 4
+'''
+
+[[exercise]]
+id = "sort-return"
+kind = "choice"
+answer = 2

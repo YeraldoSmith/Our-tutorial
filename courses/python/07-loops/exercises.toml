@@ -1,0 +1,101 @@
+[[exercise]]
+id = "sum-to-n"
+kind = "code"
+starter = ""
+solution = '''
+n = int(input())
+total = 0
+for i in range(1, n + 1):
+    total += i
+print(total)
+'''
+tests = [
+  { input = "100\n", output = "5050\n" },
+  { input = "1\n", output = "1\n" },
+  { input = "10\n", output = "55\n" },
+]
+
+[[exercise]]
+id = "factorial"
+kind = "code"
+starter = ""
+solution = '''
+n = int(input())
+result = 1
+for i in range(1, n + 1):
+    result *= i
+print(result)
+'''
+tests = [
+  { input = "5\n", output = "120\n" },
+  { input = "0\n", output = "1\n" },
+  { input = "1\n", output = "1\n" },
+  { input = "20\n", output = "2432902008176640000\n" },
+]
+
+[[exercise]]
+id = "fizzbuzz"
+kind = "code"
+starter = ""
+solution = '''
+n = int(input())
+for i in range(1, n + 1):
+    if i % 15 == 0:
+        print("FizzBuzz")
+    elif i % 3 == 0:
+        print("Fizz")
+    elif i % 5 == 0:
+        print("Buzz")
+    else:
+        print(i)
+'''
+tests = [
+  { input = "5\n", output = "1\n2\nFizz\n4\nBuzz\n" },
+  { input = "15\n", output = "1\n2\nFizz\n4\nBuzz\nFizz\n7\n8\nFizz\nBuzz\n11\nFizz\n13\n14\nFizzBuzz\n" },
+  { input = "1\n", output = "1\n" },
+]
+
+[[exercise]]
+id = "count-digits"
+kind = "code"
+starter = ""
+solution = '''
+n = int(input())
+count = 0
+while n > 0:
+    n //= 10
+    count += 1
+print(count)
+'''
+tests = [
+  { input = "12345\n", output = "5\n" },
+  { input = "7\n", output = "1\n" },
+  { input = "1000000\n", output = "7\n" },
+]
+
+[[exercise]]
+id = "triangle"
+kind = "code"
+starter = ""
+solution = '''
+n = int(input())
+for i in range(1, n + 1):
+    print(" ".join(str(j) for j in range(1, i + 1)))
+'''
+tests = [
+  { input = "4\n", output = "1\n1 2\n1 2 3\n1 2 3 4\n" },
+  { input = "1\n", output = "1\n" },
+]
+
+[[exercise]]
+id = "predict-loop"
+kind = "output"
+answer = '''
+10 7 4 1
+22
+'''
+
+[[exercise]]
+id = "range-len"
+kind = "choice"
+answer = 1
