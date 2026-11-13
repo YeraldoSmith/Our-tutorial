@@ -1,0 +1,207 @@
+[[exercise]]
+id = "wc-lite"
+kind = "code"
+starter = '''
+#include <stdio.h>
+
+int main(void) {
+
+    return 0;
+}
+'''
+solution = '''
+#include <stdio.h>
+#include <ctype.h>
+
+void count(FILE *in, long *lines, long *words, long *bytes) {
+    *lines = 0;
+    *words = 0;
+    *bytes = 0;
+    bool in_word = false;
+    int ch;
+    while ((ch = fgetc(in)) != EOF) {
+        (*bytes)++;
+        if (ch == '\n') {
+            (*lines)++;
+        }
+        if (isspace(ch)) {
+            in_word = false;
+        } else if (!in_word) {
+            in_word = true;
+            (*words)++;
+        }
+    }
+}
+
+int main(void) {
+    long lines = 0, words = 0, bytes = 0;
+    count(stdin, &lines, &words, &bytes);
+    printf("%ld %ld %ld\n", lines, words, bytes);
+    return 0;
+}
+'''
+tests = [
+  { input = "hello world\n  C is fun\n", output = "2 5 23\n" },
+  { input = "one\n", output = "1 1 4\n" },
+  { input = "\n\n\n", output = "3 0 3\n" },
+  { input = "tabs\tand  spaces here\nsecond line\nthird\n", output = "3 7 40\n" },
+  { input = "a b c d e f g\n", output = "1 7 14\n" },
+]
+
+[[exercise]]
+id = "file-roundtrip"
+kind = "code"
+starter = '''
+#include <stdio.h>
+
+int main(void) {
+
+    return 0;
+}
+'''
+solution = '''
+#include <stdio.h>
+
+int main(void) {
+    int n = 0, x = 0;
+    scanf("%d", &n);
+    FILE *f = fopen("numbers.txt", "w");
+    if (f == NULL) {
+        perror("numbers.txt");
+        return 1;
+    }
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &x);
+        fprintf(f, "%d\n", x);
+    }
+    fclose(f);
+
+    f = fopen("numbers.txt", "r");
+    if (f == NULL) {
+        perror("numbers.txt");
+        return 1;
+    }
+    int count = 0, max = 0;
+    long long sum = 0;
+    while (fscanf(f, "%d", &x) == 1) {
+        if (count == 0 || x > max) {
+            max = x;
+        }
+        sum += x;
+        count++;
+    }
+    fclose(f);
+    printf("%d %lld %d\n", count, sum, max);
+    return 0;
+}
+'''
+tests = [
+  { input = "4\n3 -1 10 2\n", output = "4 14 10\n" },
+  { input = "1\n7\n", output = "1 7 7\n" },
+  { input = "3\n-5 -2 -9\n", output = "3 -16 -2\n" },
+  { input = "50\n-470 -405 403 862 400 642 739 822 -620 335 -528 364 -699 780 -539 312 503 -617 -734 -855 88 732 -562 525 -397 -939 -117 -742 715 401 246 -971 -436 708 -700 -827 784 626 658 819 650 -463 692 -77 525 -106 944 -715 625 796\n", output = "50 4177 944\n" },
+]
+
+[[exercise]]
+id = "csv-top"
+kind = "code"
+starter = '''
+#include <stdio.h>
+
+int main(void) {
+
+    return 0;
+}
+'''
+solution = '''
+#include <stdio.h>
+
+int main(void) {
+    char line[200];
+    if (fgets(line, sizeof line, stdin) == NULL) {
+        return 1;
+    }
+    char name[32], best[32] = "";
+    int score = 0, best_score = 0, count = 0;
+    long total = 0;
+    while (fgets(line, sizeof line, stdin) != NULL) {
+        if (sscanf(line, "%31[^,],%d", name, &score) == 2) {
+            if (count == 0 || score > best_score) {
+                best_score = score;
+                snprintf(best, sizeof best, "%s", name);
+            }
+            total += score;
+            count++;
+        }
+    }
+    if (count > 0) {
+        printf("%.2f %s\n", (double)total / count, best);
+    }
+    return 0;
+}
+'''
+tests = [
+  { input = "name,score\nAda,95\nLinus,88\nGrace,91\n", output = "91.33 Ada\n" },
+  { input = "name,score\nSolo,70\n", output = "70.00 Solo\n" },
+  { input = "name,score\nAnn Lee,80\nBo,90\nCy,90\n", output = "86.67 Bo\n" },
+  { input = "name,score\nx,0\ny,100\nz,51\n", output = "50.33 y\n" },
+]
+
+[[exercise]]
+id = "grep-lite"
+kind = "code"
+starter = '''
+#include <stdio.h>
+
+int main(void) {
+
+    return 0;
+}
+'''
+solution = '''
+#include <stdio.h>
+#include <string.h>
+
+int main(void) {
+    char word[101], line[1001];
+    if (fgets(word, sizeof word, stdin) == NULL) {
+        return 1;
+    }
+    word[strcspn(word, "\n")] = '\0';
+    int number = 0;
+    bool found = false;
+    while (fgets(line, sizeof line, stdin) != NULL) {
+        line[strcspn(line, "\n")] = '\0';
+        number++;
+        if (strstr(line, word) != NULL) {
+            printf("%d: %s\n", number, line);
+            found = true;
+        }
+    }
+    if (!found) {
+        printf("not found\n");
+    }
+    return 0;
+}
+'''
+tests = [
+  { input = "cat\nthe cat sat\na dog ran\nconcatenate\n", output = "1: the cat sat\n3: concatenate\n" },
+  { input = "zebra\nno\nstripes here\n", output = "not found\n" },
+  { input = "C\nc lang\nC lang\nABC\n", output = "2: C lang\n3: ABC\n" },
+  { input = "is\nthis is it\n\nisland\n", output = "1: this is it\n3: island\n" },
+]
+
+[[exercise]]
+id = "file-predict"
+kind = "output"
+answer = '''
+one
+two
+---
+three
+'''
+
+[[exercise]]
+id = "open-w"
+kind = "choice"
+answer = 1
