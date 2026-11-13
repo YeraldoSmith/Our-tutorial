@@ -1,0 +1,248 @@
+[[exercise]]
+id = "reverse-unknown"
+kind = "code"
+starter = '''
+#include <stdio.h>
+
+int main(void) {
+
+    return 0;
+}
+'''
+solution = '''
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+    int capacity = 16, count = 0;
+    int *data = malloc(capacity * sizeof *data);
+    if (data == NULL) {
+        return 1;
+    }
+    int x;
+    while (scanf("%d", &x) == 1) {
+        if (count == capacity) {
+            capacity *= 2;
+            int *bigger = realloc(data, capacity * sizeof *data);
+            if (bigger == NULL) {
+                free(data);
+                return 1;
+            }
+            data = bigger;
+        }
+        data[count++] = x;
+    }
+    for (int i = count - 1; i >= 0; i--) {
+        printf(i == count - 1 ? "%d" : " %d", data[i]);
+    }
+    printf("\n");
+    free(data);
+    return 0;
+}
+'''
+tests = [
+  { input = "1 2 3 4 5\n", output = "5 4 3 2 1\n" },
+  { input = "42\n", output = "42\n" },
+  { input = "-51292 815593 173927 796971 938210 638333 -23462 -52439 65020 793160 231835 -601747 -612740 685901 73550 -2253 320959 287564 662993 -609566 -802609 -63427 -363722 -702635 -809851 129722 697947 867263 454245 330543 -912171 248720 -169193 -50001 371374 549618 290928 363297 -669711 306795 -968542 744204 108095 -867534 -875113 -925231 -601105 844581 -492609 257490 -936913 631811 -27059 -315714 -76140 239331 766697 -590382 88682 -510010 342789 -383120 48100 -990367 389257 -821766 -40910 373218 -416651 -146924 156092 953885 762059 -825510 484384 -467335 -338816 589620 -518356 75597 -393840 -937606 -852731 180994 607022 -773661 -160301 -773921 775414 -389933 -189423 -859855 -964579 776937 436334 -998858 -552255 -560191 944148 908978 -890272 -14366 -212597 486669 -166541 -119634 -846828 187495 320062 -583737 632655 415387 -434240 -293485 -817246 -347347 -302518 -968230 -140061 589726 935351 -752554 -717731 -483288 482720 -788091 -977026 -874395 -24951 671475 20942 -627382 430420 172926 -604928 -61683 67168 -600106 534893 613804 -725343 -120810 349968 -195215 -755666 -171933 -117612 -553589 -999013 -434199 812639 684876 243067 -362162 855696 -958832 -558109 -607188 -173147 791758 262524 346026 209972 -789587 -911694 -693064 -552797 -74020 -458353 -979920 620447 279961 -310131 741243 -378562 -190143 -846073 -844222 -811011 -562255 222083 335020 -490365 -967476 260983 -226833 -220481 304741 -49554 -733199 231597 14443 745583 204963 -715337 817236 -190296 -616583 315427 -676755 -348182 905102 -521046 715054 280195 -476764 521255 -601960 -667653 550685 319060 972172 161677 -587722 440688 992579 -185865 850086 11909 265702 -835379 -116141 -900592 -782233 -771312 -918848 74488 -464852 -500024 551533 477610 -178733 -461071 -117487 727461 897553 250880 29700 -384622 90674 -632090 948749 510690 -855767 -734920 -521019 5164 173076 370504 787612 291574 288286 -844517 -412338 -554565 923843 918784 -572226 570735 -965241 -854973 -435460 -137176 -65288 -477675 -873216 -902277 -630370 -408684 -226602 113595 199926 -724060 -806660 -240527 -709737 868437 -55557 -305917 377686 537013 449596 94585 225660 985697 -705671 237058 -926431 936903 -962474 -4288 908853 -250327 470040 -346099 -929658 -955417 254878 334175 -843063\n", output = "-843063 334175 254878 -955417 -929658 -346099 470040 -250327 908853 -4288 -962474 936903 -926431 237058 -705671 985697 225660 94585 449596 537013 377686 -305917 -55557 868437 -709737 -240527 -806660 -724060 199926 113595 -226602 -408684 -630370 -902277 -873216 -477675 -65288 -137176 -435460 -854973 -965241 570735 -572226 918784 923843 -554565 -412338 -844517 288286 291574 787612 370504 173076 5164 -521019 -734920 -855767 510690 948749 -632090 90674 -384622 29700 250880 897553 727461 -117487 -461071 -178733 477610 551533 -500024 -464852 74488 -918848 -771312 -782233 -900592 -116141 -835379 265702 11909 850086 -185865 992579 440688 -587722 161677 972172 319060 550685 -667653 -601960 521255 -476764 280195 715054 -521046 905102 -348182 -676755 315427 -616583 -190296 817236 -715337 204963 745583 14443 231597 -733199 -49554 304741 -220481 -226833 260983 -967476 -490365 335020 222083 -562255 -811011 -844222 -846073 -190143 -378562 741243 -310131 279961 620447 -979920 -458353 -74020 -552797 -693064 -911694 -789587 209972 346026 262524 791758 -173147 -607188 -558109 -958832 855696 -362162 243067 684876 812639 -434199 -999013 -553589 -117612 -171933 -755666 -195215 349968 -120810 -725343 613804 534893 -600106 67168 -61683 -604928 172926 430420 -627382 20942 671475 -24951 -874395 -977026 -788091 482720 -483288 -717731 -752554 935351 589726 -140061 -968230 -302518 -347347 -817246 -293485 -434240 415387 632655 -583737 320062 187495 -846828 -119634 -166541 486669 -212597 -14366 -890272 908978 944148 -560191 -552255 -998858 436334 776937 -964579 -859855 -189423 -389933 775414 -773921 -160301 -773661 607022 180994 -852731 -937606 -393840 75597 -518356 589620 -338816 -467335 484384 -825510 762059 953885 156092 -146924 -416651 373218 -40910 -821766 389257 -990367 48100 -383120 342789 -510010 88682 -590382 766697 239331 -76140 -315714 -27059 631811 -936913 257490 -492609 844581 -601105 -925231 -875113 -867534 108095 744204 -968542 306795 -669711 363297 290928 549618 371374 -50001 -169193 248720 -912171 330543 454245 867263 697947 129722 -809851 -702635 -363722 -63427 -802609 -609566 662993 287564 320959 -2253 73550 685901 -612740 -601747 231835 793160 65020 -52439 -23462 638333 938210 796971 173927 815593 -51292\n" },
+  { input = "7 -7\n", output = "-7 7\n" },
+  { input = "3\n1\n4\n1\n5\n", output = "5 1 4 1 3\n" },
+]
+
+[[exercise]]
+id = "merge-sorted"
+kind = "code"
+starter = '''
+#include <stdio.h>
+
+int main(void) {
+
+    return 0;
+}
+'''
+solution = '''
+#include <stdio.h>
+#include <stdlib.h>
+
+int *read_array(int *n) {
+    if (scanf("%d", n) != 1 || *n <= 0) {
+        return NULL;
+    }
+    int *a = malloc(*n * sizeof *a);
+    if (a == NULL) {
+        return NULL;
+    }
+    for (int i = 0; i < *n; i++) {
+        scanf("%d", &a[i]);
+    }
+    return a;
+}
+
+int main(void) {
+    int n = 0, m = 0;
+    int *a = read_array(&n);
+    int *b = read_array(&m);
+    int *c = malloc((n + m) * sizeof *c);
+    if (a == NULL || b == NULL || c == NULL) {
+        free(a);
+        free(b);
+        free(c);
+        return 1;
+    }
+    int i = 0, j = 0, k = 0;
+    while (i < n && j < m) {
+        if (a[i] <= b[j]) {
+            c[k++] = a[i++];
+        } else {
+            c[k++] = b[j++];
+        }
+    }
+    while (i < n) {
+        c[k++] = a[i++];
+    }
+    while (j < m) {
+        c[k++] = b[j++];
+    }
+    for (int t = 0; t < k; t++) {
+        printf(t == 0 ? "%d" : " %d", c[t]);
+    }
+    printf("\n");
+    free(a);
+    free(b);
+    free(c);
+    return 0;
+}
+'''
+tests = [
+  { input = "3 1 4 9\n4 2 3 10 12\n", output = "1 2 3 4 9 10 12\n" },
+  { input = "1 5\n1 1\n", output = "1 5\n" },
+  { input = "3 1 2 3\n3 4 5 6\n", output = "1 2 3 4 5 6\n" },
+  { input = "4 -5 0 0 7\n2 0 1\n", output = "-5 0 0 0 1 7\n" },
+  { input = "40 -96 -96 -92 -88 -82 -81 -81 -80 -80 -79 -78 -76 -70 -66 -65 -20 -18 -12 -9 -5 -2 -2 7 16 22 24 28 40 47 50 56 60 64 70 76 81 88 89 89 89\n25 -94 -92 -78 -77 -71 -41 -34 -20 -15 0 7 13 18 19 24 32 33 39 49 54 78 79 87 89 93\n", output = "-96 -96 -94 -92 -92 -88 -82 -81 -81 -80 -80 -79 -78 -78 -77 -76 -71 -70 -66 -65 -41 -34 -20 -20 -18 -15 -12 -9 -5 -2 -2 0 7 7 13 16 18 19 22 24 24 28 32 33 39 40 47 49 50 54 56 60 64 70 76 78 79 81 87 88 89 89 89 89 93\n" },
+]
+
+[[exercise]]
+id = "lines-reverse"
+kind = "code"
+starter = '''
+#include <stdio.h>
+
+int main(void) {
+
+    return 0;
+}
+'''
+solution = '''
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(void) {
+    int capacity = 8, count = 0;
+    char **lines = malloc(capacity * sizeof *lines);
+    if (lines == NULL) {
+        return 1;
+    }
+    char buf[202];
+    while (fgets(buf, sizeof buf, stdin) != NULL) {
+        buf[strcspn(buf, "\n")] = '\0';
+        if (count == capacity) {
+            capacity *= 2;
+            char **bigger = realloc(lines, capacity * sizeof *lines);
+            if (bigger == NULL) {
+                break;
+            }
+            lines = bigger;
+        }
+        char *copy = malloc(strlen(buf) + 1);
+        if (copy == NULL) {
+            break;
+        }
+        strcpy(copy, buf);
+        lines[count++] = copy;
+    }
+    for (int i = count - 1; i >= 0; i--) {
+        printf("%s\n", lines[i]);
+        free(lines[i]);
+    }
+    free(lines);
+    return 0;
+}
+'''
+tests = [
+  { input = "first line\nsecond line\nthird line\n", output = "third line\nsecond line\nfirst line\n" },
+  { input = "only one\n", output = "only one\n" },
+  { input = "line 1: x\nline 2: xx\nline 3: xxx\nline 4: xxxx\nline 5: xxxxx\nline 6: xxxxxx\nline 7: xxxxxxx\nline 8: xxxxxxxx\nline 9: xxxxxxxxx\nline 10: xxxxxxxxxx\nline 11: xxxxxxxxxxx\nline 12: xxxxxxxxxxxx\nline 13: xxxxxxxxxxxxx\nline 14: xxxxxxxxxxxxxx\nline 15: xxxxxxxxxxxxxxx\nline 16: xxxxxxxxxxxxxxxx\nline 17: xxxxxxxxxxxxxxxxx\nline 18: xxxxxxxxxxxxxxxxxx\nline 19: xxxxxxxxxxxxxxxxxxx\nline 20: xxxxxxxxxxxxxxxxxxxx\n", output = "line 20: xxxxxxxxxxxxxxxxxxxx\nline 19: xxxxxxxxxxxxxxxxxxx\nline 18: xxxxxxxxxxxxxxxxxx\nline 17: xxxxxxxxxxxxxxxxx\nline 16: xxxxxxxxxxxxxxxx\nline 15: xxxxxxxxxxxxxxx\nline 14: xxxxxxxxxxxxxx\nline 13: xxxxxxxxxxxxx\nline 12: xxxxxxxxxxxx\nline 11: xxxxxxxxxxx\nline 10: xxxxxxxxxx\nline 9: xxxxxxxxx\nline 8: xxxxxxxx\nline 7: xxxxxxx\nline 6: xxxxxx\nline 5: xxxxx\nline 4: xxxx\nline 3: xxx\nline 2: xx\nline 1: x\n" },
+  { input = "a  b\n\nc\n", output = "c\n\na  b\n" },
+]
+
+[[exercise]]
+id = "matrix-mul"
+kind = "code"
+starter = '''
+#include <stdio.h>
+
+int main(void) {
+
+    return 0;
+}
+'''
+solution = '''
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+    int n = 0, m = 0, p = 0;
+    scanf("%d %d %d", &n, &m, &p);
+    int *a = malloc(n * m * sizeof *a);
+    int *b = malloc(m * p * sizeof *b);
+    long long *c = calloc(n * p, sizeof *c);
+    if (a == NULL || b == NULL || c == NULL) {
+        free(a);
+        free(b);
+        free(c);
+        return 1;
+    }
+    for (int i = 0; i < n * m; i++) {
+        scanf("%d", &a[i]);
+    }
+    for (int i = 0; i < m * p; i++) {
+        scanf("%d", &b[i]);
+    }
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < p; j++) {
+            for (int k = 0; k < m; k++) {
+                c[i * p + j] += (long long)a[i * m + k] * b[k * p + j];
+            }
+        }
+    }
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < p; j++) {
+            printf(j == 0 ? "%lld" : " %lld", c[i * p + j]);
+        }
+        printf("\n");
+    }
+    free(a);
+    free(b);
+    free(c);
+    return 0;
+}
+'''
+tests = [
+  { input = "2 3 2\n1 2 3\n4 5 6\n7 8\n9 10\n11 12\n", output = "58 64\n139 154\n" },
+  { input = "1 1 1\n2\n3\n", output = "6\n" },
+  { input = "2 2 2\n1 0\n0 1\n5 6\n7 8\n", output = "5 6\n7 8\n" },
+  { input = "3 4 2\n6 6 -1 -9\n2 0 -5 -3\n7 -4 1 5\n6 -2\n1 3\n-1 -3\n4 -3\n", output = "7 36\n5 20\n57 -44\n" },
+  { input = "1 5 3\n-3 3 -2 9 1\n-3 -5 -5\n6 2 -8\n-7 -1 -4\n-6 5 6\n-1 -3 4\n", output = "-14 65 57\n" },
+]
+
+[[exercise]]
+id = "mem-predict"
+kind = "output"
+answer = '''
+0 5 0 0 9
+'''
+
+[[exercise]]
+id = "mem-safe"
+kind = "choice"
+answer = 2

@@ -89,7 +89,7 @@ int main(void) {
 
 This is one of the most important differences between C and Python. The loop below goes one step too far and reads `a[5]`, which doesn't exist:
 
-```c
+```c ub
 #include <stdio.h>
 
 int main(void) {

@@ -89,7 +89,7 @@ int main(void) {
 
 这是 C 和 Python 最重要的区别之一。下面的循环多走了一步，访问了不存在的 `a[5]`：
 
-```c
+```c ub
 #include <stdio.h>
 
 int main(void) {
