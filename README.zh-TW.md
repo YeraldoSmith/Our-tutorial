@@ -12,6 +12,15 @@
 - 🖥️ **獨立學習程式**（不是網頁）：Windows、macOS、Linux 都能用；讀課文、寫程式碼、執行、做題在一個視窗裡完成
 - 🆕 **內容是現代的**：Python 3.14 與 uv、C23、C++23、Java 25（LTS）、Rust 2024、Go 1.2x、Node.js 直接執行 TypeScript……
 
+## 當前進度
+
+| 課程 | 狀態 |
+|------|------|
+| 🚀 程式設計起步 | ✅ 8 課 |
+| 🐍 Python | ✅ 16 課 |
+| 🔧 C 語言 | ✅ 14 課 |
+| C++、Java、Rust、Go、JavaScript/TypeScript、彙編 | 🚧 正在編寫，陸續更新 |
+
 ## 從哪裡開始？
 
 | 我是…… | 建議 |

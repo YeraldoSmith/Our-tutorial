@@ -12,6 +12,15 @@ A programming course that starts from **absolute zero**, in several languages, w
 - 🖥️ **A real desktop app** (not a web page) for Windows, macOS and Linux: read, write, run and practise in one window
 - 🆕 **Modern content**: Python 3.14 and uv, C23, C++23, Java 25 (LTS), Rust 2024, Go 1.2x, Node.js running TypeScript directly…
 
+## Progress
+
+| Course | Status |
+|--------|--------|
+| 🚀 Start here | ✅ 8 lessons |
+| 🐍 Python | ✅ 16 lessons |
+| 🔧 C | ✅ 14 lessons |
+| C++, Java, Rust, Go, JavaScript/TypeScript, Assembly | 🚧 being written, arriving lesson by lesson |
+
 ## Where do I start?
 
 | I am… | Suggested path |
