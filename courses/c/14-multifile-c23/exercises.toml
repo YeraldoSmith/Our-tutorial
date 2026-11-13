@@ -1,0 +1,376 @@
+[[exercise]]
+id = "stack-module"
+kind = "code"
+solution = '''
+#include <stdio.h>
+#include <string.h>
+
+// ======== stack.h：模块的「接口」 ========
+void stack_push(int value);
+int stack_pop(void);            // 栈为空时返回 -1
+bool stack_empty(void);
+int stack_size(void);
+
+// ======== stack.c：模块的「实现」（请补全） ========
+#define STACK_MAX 100
+static int items[STACK_MAX];    // static：只有本文件能直接访问
+static int top = 0;             // 栈里现在有几个元素
+
+void stack_push(int value) {
+    if (top < STACK_MAX) {
+        items[top] = value;
+        top++;
+    }
+}
+
+int stack_pop(void) {
+    if (top == 0) {
+        return -1;
+    }
+    top--;
+    return items[top];
+}
+
+bool stack_empty(void) {
+    return top == 0;
+}
+
+int stack_size(void) {
+    return top;
+}
+
+// ======== main.c：使用这个模块 ========
+int main(void) {
+    char cmd[16];
+    int x = 0;
+    while (scanf("%15s", cmd) == 1) {
+        if (strcmp(cmd, "push") == 0 && scanf("%d", &x) == 1) {
+            stack_push(x);
+        } else if (strcmp(cmd, "pop") == 0) {
+            printf("%d\n", stack_pop());
+        } else if (strcmp(cmd, "size") == 0) {
+            printf("%d\n", stack_size());
+        }
+    }
+    return 0;
+}
+'''
+tests = [
+  { input = "push 3 push 5 pop size pop pop\n", output = "5\n1\n3\n-1\n" },
+  { input = "pop size\n", output = "-1\n0\n" },
+  { input = "push 1 push 2 push 3 size pop pop push 9 pop pop pop\n", output = "3\n3\n2\n9\n1\n-1\n" },
+  { input = "push 0 push 1 push 2 push 3 push 4 push 5 push 6 push 7 push 8 push 9 push 10 push 11 push 12 push 13 push 14 push 15 push 16 push 17 push 18 push 19 push 20 push 21 push 22 push 23 push 24 push 25 push 26 push 27 push 28 push 29 push 30 push 31 push 32 push 33 push 34 push 35 push 36 push 37 push 38 push 39 push 40 push 41 push 42 push 43 push 44 push 45 push 46 push 47 push 48 push 49 push 50 push 51 push 52 push 53 push 54 push 55 push 56 push 57 push 58 push 59 push 60 push 61 push 62 push 63 push 64 push 65 push 66 push 67 push 68 push 69 push 70 push 71 push 72 push 73 push 74 push 75 push 76 push 77 push 78 push 79 push 80 push 81 push 82 push 83 push 84 push 85 push 86 push 87 push 88 push 89 push 90 push 91 push 92 push 93 push 94 push 95 push 96 push 97 push 98 push 99 push 100 push 101 push 102 push 103 push 104 size pop\n", output = "100\n99\n" },
+]
+[exercise.starter]
+zh-CN = '''
+#include <stdio.h>
+#include <string.h>
+
+// ======== stack.h：模块的「接口」 ========
+void stack_push(int value);
+int stack_pop(void);            // 栈为空时返回 -1
+bool stack_empty(void);
+int stack_size(void);
+
+// ======== stack.c：模块的「实现」（请补全） ========
+#define STACK_MAX 100
+static int items[STACK_MAX];    // static：只有本文件能直接访问
+static int top = 0;             // 栈里现在有几个元素
+
+void stack_push(int value) {
+    // 在这里写代码
+}
+
+int stack_pop(void) {
+    // 在这里写代码
+    return -1;
+}
+
+bool stack_empty(void) {
+    // 在这里写代码
+    return true;
+}
+
+int stack_size(void) {
+    // 在这里写代码
+    return 0;
+}
+
+// ======== main.c：使用这个模块 ========
+int main(void) {
+    char cmd[16];
+    int x = 0;
+    while (scanf("%15s", cmd) == 1) {
+        if (strcmp(cmd, "push") == 0 && scanf("%d", &x) == 1) {
+            stack_push(x);
+        } else if (strcmp(cmd, "pop") == 0) {
+            printf("%d\n", stack_pop());
+        } else if (strcmp(cmd, "size") == 0) {
+            printf("%d\n", stack_size());
+        }
+    }
+    return 0;
+}
+'''
+zh-TW = '''
+#include <stdio.h>
+#include <string.h>
+
+// ======== stack.h：模組的「介面」 ========
+void stack_push(int value);
+int stack_pop(void);            // 堆疊為空時返回 -1
+bool stack_empty(void);
+int stack_size(void);
+
+// ======== stack.c：模組的「實現」（請補全） ========
+#define STACK_MAX 100
+static int items[STACK_MAX];    // static：只有本檔案能直接訪問
+static int top = 0;             // 堆疊裡現在有幾個元素
+
+void stack_push(int value) {
+    // 在這裡寫程式碼
+}
+
+int stack_pop(void) {
+    // 在這裡寫程式碼
+    return -1;
+}
+
+bool stack_empty(void) {
+    // 在這裡寫程式碼
+    return true;
+}
+
+int stack_size(void) {
+    // 在這裡寫程式碼
+    return 0;
+}
+
+// ======== main.c：使用這個模組 ========
+int main(void) {
+    char cmd[16];
+    int x = 0;
+    while (scanf("%15s", cmd) == 1) {
+        if (strcmp(cmd, "push") == 0 && scanf("%d", &x) == 1) {
+            stack_push(x);
+        } else if (strcmp(cmd, "pop") == 0) {
+            printf("%d\n", stack_pop());
+        } else if (strcmp(cmd, "size") == 0) {
+            printf("%d\n", stack_size());
+        }
+    }
+    return 0;
+}
+'''
+en = '''
+#include <stdio.h>
+#include <string.h>
+
+// ======== stack.h: the module's "interface" ========
+void stack_push(int value);
+int stack_pop(void);            // returns -1 when the stack is empty
+bool stack_empty(void);
+int stack_size(void);
+
+// ======== stack.c: the module's "implementation" (complete it) ========
+#define STACK_MAX 100
+static int items[STACK_MAX];    // static: only this file can reach it directly
+static int top = 0;             // how many items are on the stack
+
+void stack_push(int value) {
+    // write your code here
+}
+
+int stack_pop(void) {
+    // write your code here
+    return -1;
+}
+
+bool stack_empty(void) {
+    // write your code here
+    return true;
+}
+
+int stack_size(void) {
+    // write your code here
+    return 0;
+}
+
+// ======== main.c: using the module ========
+int main(void) {
+    char cmd[16];
+    int x = 0;
+    while (scanf("%15s", cmd) == 1) {
+        if (strcmp(cmd, "push") == 0 && scanf("%d", &x) == 1) {
+            stack_push(x);
+        } else if (strcmp(cmd, "pop") == 0) {
+            printf("%d\n", stack_pop());
+        } else if (strcmp(cmd, "size") == 0) {
+            printf("%d\n", stack_size());
+        }
+    }
+    return 0;
+}
+'''
+ru = '''
+#include <stdio.h>
+#include <string.h>
+
+// ======== stack.h: «интерфейс» модуля ========
+void stack_push(int value);
+int stack_pop(void);            // возвращает -1, если стек пуст
+bool stack_empty(void);
+int stack_size(void);
+
+// ======== stack.c: «реализация» модуля (допишите) ========
+#define STACK_MAX 100
+static int items[STACK_MAX];    // static: напрямую доступно только в этом файле
+static int top = 0;             // сколько элементов сейчас в стеке
+
+void stack_push(int value) {
+    // пишите код здесь
+}
+
+int stack_pop(void) {
+    // пишите код здесь
+    return -1;
+}
+
+bool stack_empty(void) {
+    // пишите код здесь
+    return true;
+}
+
+int stack_size(void) {
+    // пишите код здесь
+    return 0;
+}
+
+// ======== main.c: используем модуль ========
+int main(void) {
+    char cmd[16];
+    int x = 0;
+    while (scanf("%15s", cmd) == 1) {
+        if (strcmp(cmd, "push") == 0 && scanf("%d", &x) == 1) {
+            stack_push(x);
+        } else if (strcmp(cmd, "pop") == 0) {
+            printf("%d\n", stack_pop());
+        } else if (strcmp(cmd, "size") == 0) {
+            printf("%d\n", stack_size());
+        }
+    }
+    return 0;
+}
+'''
+
+[[exercise]]
+id = "find-negative"
+kind = "code"
+starter = '''
+#include <stdio.h>
+
+int main(void) {
+
+    return 0;
+}
+'''
+solution = '''
+#include <stdio.h>
+
+int *find_negative(int a[], int n) {
+    for (int i = 0; i < n; i++) {
+        if (a[i] < 0) {
+            return &a[i];
+        }
+    }
+    return nullptr;
+}
+
+int main(void) {
+    int a[1000];
+    int n = 0;
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+    }
+    int *p = find_negative(a, n);
+    if (p != nullptr) {
+        printf("%td %d\n", p - a, *p);
+    } else {
+        printf("none\n");
+    }
+    return 0;
+}
+'''
+tests = [
+  { input = "5\n4 0 -7 2 -1\n", output = "2 -7\n" },
+  { input = "3\n1 2 3\n", output = "none\n" },
+  { input = "1\n-5\n", output = "0 -5\n" },
+  { input = "4\n0 0 0 -1\n", output = "3 -1\n" },
+  { input = "40\n3 36 41 45 38 30 12 14 44 13 15 43 1 39 25 16 26 40 22 22 46 4 13 11 17 19 48 13 20 48 37 37 30 6 7 32 39 39 14 7\n", output = "none\n" },
+]
+
+[[exercise]]
+id = "to-binary"
+kind = "code"
+starter = '''
+#include <stdio.h>
+
+int main(void) {
+
+    return 0;
+}
+'''
+solution = '''
+#include <stdio.h>
+
+int main(void) {
+    int x = 0;
+    scanf("%d", &x);
+    int ones = 0;
+    bool started = false;
+    for (int bit = 30; bit >= 0; bit--) {
+        int b = (x >> bit) & 1;
+        if (b == 1) {
+            started = true;
+            ones++;
+        }
+        if (started) {
+            printf("%d", b);
+        }
+    }
+    if (!started) {
+        printf("0");
+    }
+    printf(" %d\n", ones);
+    return 0;
+}
+'''
+tests = [
+  { input = "10\n", output = "1010 2\n" },
+  { input = "0\n", output = "0 0\n" },
+  { input = "1\n", output = "1 1\n" },
+  { input = "255\n", output = "11111111 8\n" },
+  { input = "1024\n", output = "10000000000 1\n" },
+  { input = "2147483647\n", output = "1111111111111111111111111111111 31\n" },
+  { input = "123456789\n", output = "111010110111100110100010101 16\n" },
+]
+
+[[exercise]]
+id = "macro-predict"
+kind = "output"
+answer = '''
+8
+12
+5
+'''
+
+[[exercise]]
+id = "link-error"
+kind = "choice"
+answer = 1
+
+[[exercise]]
+id = "header-guard"
+kind = "choice"
+answer = 1
